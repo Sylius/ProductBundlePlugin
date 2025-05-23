@@ -61,7 +61,9 @@
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "phpstan/extension-installer": true,
             "symfony/thanks": false,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "symfony/runtime": false,
+            "symfony/flex": false
         }
     }
 }
