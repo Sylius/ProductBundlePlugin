@@ -9,7 +9,7 @@
             <directory>./tests/Api</directory>
         </testsuite>
         <testsuite name="SyliusProductBundlePlugin Unit Test Suite">
-            <directory>./tests/Api</directory>
+            <directory>./tests/Unit</directory>
         </testsuite>
     </testsuites>
 
