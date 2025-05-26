@@ -11,13 +11,13 @@
 
 declare(strict_types=1);
 
-namespace Tests\BitBag\SyliusProductBundlePlugin\Unit\MotherObject;
+namespace Tests\Sylius\ProductBundlePlugin\Unit\MotherObject;
 
-use BitBag\SyliusProductBundlePlugin\Entity\ProductBundleInterface;
-use BitBag\SyliusProductBundlePlugin\Entity\ProductInterface;
+use Sylius\ProductBundlePlugin\Entity\ProductBundleInterface;
+use Sylius\ProductBundlePlugin\Entity\ProductInterface;
 use Sylius\Component\Core\Model\ChannelInterface;
 use Sylius\Component\Core\Model\ProductVariantInterface;
-use Tests\BitBag\SyliusProductBundlePlugin\Entity\Product;
+use Tests\Sylius\ProductBundlePlugin\Entity\Product;
 
 final class ProductMother
 {

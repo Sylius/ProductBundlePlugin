@@ -11,9 +11,9 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusProductBundlePlugin\Twig\Extension;
+namespace Sylius\ProductBundlePlugin\Twig\Extension;
 
-use BitBag\SyliusProductBundlePlugin\Entity\ProductInterface;
+use Sylius\ProductBundlePlugin\Entity\ProductInterface;
 use Twig\Environment;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;

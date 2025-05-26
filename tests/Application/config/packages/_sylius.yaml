@@ -15,16 +15,16 @@ sylius_product:
     resources:
         product:
             classes:
-                model: Tests\BitBag\SyliusProductBundlePlugin\Entity\Product
+                model: Tests\Sylius\ProductBundlePlugin\Entity\Product
         product_variant:
             classes:
-                repository: BitBag\SyliusProductBundlePlugin\Repository\ProductVariantRepository
+                repository: Sylius\ProductBundlePlugin\Repository\ProductVariantRepository
 
 sylius_order:
     resources:
         order_item:
             classes:
-                model: Tests\BitBag\SyliusProductBundlePlugin\Entity\OrderItem
+                model: Tests\Sylius\ProductBundlePlugin\Entity\OrderItem
 
 sylius_shop:
     product_grid:

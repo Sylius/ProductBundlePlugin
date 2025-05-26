@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusProductBundlePlugin\Form\Type;
+namespace Sylius\ProductBundlePlugin\Form\Type;
 
 use Sylius\Bundle\AdminBundle\Form\Type\ProductVariantAutocompleteType;
 use Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType;

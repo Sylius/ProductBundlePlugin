@@ -11,10 +11,10 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusProductBundlePlugin\Validator;
+namespace Sylius\ProductBundlePlugin\Validator;
 
-use BitBag\SyliusProductBundlePlugin\Command\AddProductBundleToCartCommand;
-use BitBag\SyliusProductBundlePlugin\Entity\OrderItemInterface;
+use Sylius\ProductBundlePlugin\Command\AddProductBundleToCartCommand;
+use Sylius\ProductBundlePlugin\Entity\OrderItemInterface;
 use Sylius\Component\Channel\Model\ChannelInterface;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Model\ProductInterface;

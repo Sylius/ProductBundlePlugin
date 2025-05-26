@@ -28,7 +28,7 @@ default:
         FriendsOfBehat\SymfonyExtension:
             bootstrap: tests/Application/config/bootstrap.php
             kernel:
-                class: Tests\BitBag\SyliusProductBundlePlugin\Application\Kernel
+                class: Tests\Sylius\ProductBundlePlugin\Application\Kernel
                 path: tests/Application/Kernel.php
                 environment: test
 

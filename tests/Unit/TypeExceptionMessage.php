@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\BitBag\SyliusProductBundlePlugin\Unit;
+namespace Tests\Sylius\ProductBundlePlugin\Unit;
 
 final class TypeExceptionMessage
 {

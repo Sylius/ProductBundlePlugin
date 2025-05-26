@@ -34,7 +34,7 @@
                     class="ApiPlatform\Metadata\Patch"
                     uriTemplate="/shop/product-bundles/{id}/add-to-cart"
                     messenger="input"
-                    input="BitBag\SyliusProductBundlePlugin\Command\AddProductBundleToCartCommand"
+                    input="Sylius\ProductBundlePlugin\Command\AddProductBundleToCartCommand"
                     output="false"
             >
                 <validationContext>

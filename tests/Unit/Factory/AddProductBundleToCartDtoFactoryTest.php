@@ -11,19 +11,19 @@
 
 declare(strict_types=1);
 
-namespace Tests\BitBag\SyliusProductBundlePlugin\Unit\Factory;
+namespace Tests\Sylius\ProductBundlePlugin\Unit\Factory;
 
-use BitBag\SyliusProductBundlePlugin\Dto\AddProductBundleToCartDtoInterface;
-use BitBag\SyliusProductBundlePlugin\Factory\AddProductBundleItemToCartCommandFactoryInterface;
-use BitBag\SyliusProductBundlePlugin\Factory\AddProductBundleToCartDtoFactory;
+use Sylius\ProductBundlePlugin\Dto\AddProductBundleToCartDtoInterface;
+use Sylius\ProductBundlePlugin\Factory\AddProductBundleItemToCartCommandFactoryInterface;
+use Sylius\ProductBundlePlugin\Factory\AddProductBundleToCartDtoFactory;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Tests\BitBag\SyliusProductBundlePlugin\Unit\MotherObject\AddProductBundleItemToCartCommandMother;
-use Tests\BitBag\SyliusProductBundlePlugin\Unit\MotherObject\OrderItemMother;
-use Tests\BitBag\SyliusProductBundlePlugin\Unit\MotherObject\OrderMother;
-use Tests\BitBag\SyliusProductBundlePlugin\Unit\MotherObject\ProductBundleItemMother;
-use Tests\BitBag\SyliusProductBundlePlugin\Unit\MotherObject\ProductBundleMother;
-use Tests\BitBag\SyliusProductBundlePlugin\Unit\MotherObject\ProductMother;
+use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\AddProductBundleItemToCartCommandMother;
+use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\OrderItemMother;
+use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\OrderMother;
+use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\ProductBundleItemMother;
+use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\ProductBundleMother;
+use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\ProductMother;
 
 final class AddProductBundleToCartDtoFactoryTest extends TestCase
 {

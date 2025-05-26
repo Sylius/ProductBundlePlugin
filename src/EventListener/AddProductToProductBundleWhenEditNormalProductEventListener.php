@@ -11,9 +11,9 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusProductBundlePlugin\EventListener;
+namespace Sylius\ProductBundlePlugin\EventListener;
 
-use BitBag\SyliusProductBundlePlugin\Entity\ProductInterface;
+use Sylius\ProductBundlePlugin\Entity\ProductInterface;
 use Sylius\Bundle\ResourceBundle\Event\ResourceControllerEvent;
 
 final class AddProductToProductBundleWhenEditNormalProductEventListener

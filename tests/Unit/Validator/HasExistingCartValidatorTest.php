@@ -11,16 +11,16 @@
 
 declare(strict_types=1);
 
-namespace Tests\BitBag\SyliusProductBundlePlugin\Unit\Validator;
+namespace Tests\Sylius\ProductBundlePlugin\Unit\Validator;
 
-use BitBag\SyliusProductBundlePlugin\Command\AddProductBundleToCartCommand;
-use BitBag\SyliusProductBundlePlugin\Validator\HasExistingCart;
-use BitBag\SyliusProductBundlePlugin\Validator\HasExistingCartValidator;
+use Sylius\ProductBundlePlugin\Command\AddProductBundleToCartCommand;
+use Sylius\ProductBundlePlugin\Validator\HasExistingCart;
+use Sylius\ProductBundlePlugin\Validator\HasExistingCartValidator;
 use PHPUnit\Framework\MockObject\MockObject;
 use Sylius\Component\Core\Repository\OrderRepositoryInterface;
 use Symfony\Component\Validator\Exception\UnexpectedValueException;
 use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
-use Tests\BitBag\SyliusProductBundlePlugin\Unit\MotherObject\OrderMother;
+use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\OrderMother;
 
 final class HasExistingCartValidatorTest extends ConstraintValidatorTestCase
 {

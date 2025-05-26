@@ -11,19 +11,19 @@
 
 declare(strict_types=1);
 
-namespace Tests\BitBag\SyliusProductBundlePlugin\Unit\Validator;
+namespace Tests\Sylius\ProductBundlePlugin\Unit\Validator;
 
-use BitBag\SyliusProductBundlePlugin\Command\AddProductBundleToCartCommand;
-use BitBag\SyliusProductBundlePlugin\Entity\ProductInterface;
-use BitBag\SyliusProductBundlePlugin\Validator\HasProductBundle;
-use BitBag\SyliusProductBundlePlugin\Validator\HasProductBundleValidator;
+use Sylius\ProductBundlePlugin\Command\AddProductBundleToCartCommand;
+use Sylius\ProductBundlePlugin\Entity\ProductInterface;
+use Sylius\ProductBundlePlugin\Validator\HasProductBundle;
+use Sylius\ProductBundlePlugin\Validator\HasProductBundleValidator;
 use PHPUnit\Framework\MockObject\MockObject;
 use Sylius\Component\Core\Repository\OrderRepositoryInterface;
 use Sylius\Component\Core\Repository\ProductRepositoryInterface;
 use Symfony\Component\Validator\Exception\UnexpectedValueException;
 use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
-use Tests\BitBag\SyliusProductBundlePlugin\Unit\MotherObject\ProductBundleMother;
-use Tests\BitBag\SyliusProductBundlePlugin\Unit\MotherObject\ProductMother;
+use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\ProductBundleMother;
+use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\ProductMother;
 
 final class HasProductBundleTest extends ConstraintValidatorTestCase
 {

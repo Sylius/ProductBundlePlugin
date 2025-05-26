@@ -11,11 +11,11 @@
                     xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping
         https://symfony.com/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd">
 
-    <class name="BitBag\SyliusProductBundlePlugin\Command\AddProductBundleToCartCommand">
-        <constraint name="BitBag\SyliusProductBundlePlugin\Validator\Sequentially">
-            <constraint name="BitBag\SyliusProductBundlePlugin\Validator\HasExistingCart"/>
-            <constraint name="BitBag\SyliusProductBundlePlugin\Validator\HasProductBundle"/>
-            <constraint name="BitBag\SyliusProductBundlePlugin\Validator\HasAvailableProductBundle"/>
+    <class name="Sylius\ProductBundlePlugin\Command\AddProductBundleToCartCommand">
+        <constraint name="Sylius\ProductBundlePlugin\Validator\Sequentially">
+            <constraint name="Sylius\ProductBundlePlugin\Validator\HasExistingCart"/>
+            <constraint name="Sylius\ProductBundlePlugin\Validator\HasProductBundle"/>
+            <constraint name="Sylius\ProductBundlePlugin\Validator\HasAvailableProductBundle"/>
         </constraint>
 
         <property name="quantity">

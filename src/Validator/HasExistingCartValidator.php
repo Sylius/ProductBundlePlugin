@@ -11,9 +11,9 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusProductBundlePlugin\Validator;
+namespace Sylius\ProductBundlePlugin\Validator;
 
-use BitBag\SyliusProductBundlePlugin\Command\OrderIdentityAwareInterface;
+use Sylius\ProductBundlePlugin\Command\OrderIdentityAwareInterface;
 use Sylius\Component\Core\Repository\OrderRepositoryInterface;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;

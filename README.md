@@ -82,7 +82,7 @@ The **SyliusProductBundle** plugin allows you to create bundles from existing pr
         return [
          ...
         
-            BitBag\SyliusProductBundlePlugin\BitBagSyliusProductBundlePlugin::class => ['all' => true ],
+            Sylius\ProductBundlePlugin\SyliusProductBundlePlugin::class => ['all' => true ],
         ];
     ```
 
@@ -117,9 +117,9 @@ The **SyliusProductBundle** plugin allows you to create bundles from existing pr
     
     namespace App\Entity\Product;
     
-    use BitBag\SyliusProductBundlePlugin\Entity\ProductBundleInterface;
-    use BitBag\SyliusProductBundlePlugin\Entity\ProductBundlesAwareTrait;
-    use BitBag\SyliusProductBundlePlugin\Entity\ProductInterface;
+    use Sylius\ProductBundlePlugin\Entity\ProductBundleInterface;
+    use Sylius\ProductBundlePlugin\Entity\ProductBundlesAwareTrait;
+    use Sylius\ProductBundlePlugin\Entity\ProductInterface;
     use Doctrine\ORM\Mapping as ORM;
     use Sylius\Component\Core\Model\Product as BaseProduct;
     use Sylius\Component\Product\Model\ProductTranslationInterface;
@@ -134,7 +134,7 @@ The **SyliusProductBundle** plugin allows you to create bundles from existing pr
          * @var ProductBundleInterface
          */
         #[ORM\OneToOne(
-            targetEntity: "BitBag\SyliusProductBundlePlugin\Entity\ProductBundleInterface",
+            targetEntity: "Sylius\ProductBundlePlugin\Entity\ProductBundleInterface",
             mappedBy: "product",
             cascade: ["all"]
         )]
@@ -159,7 +159,7 @@ The **SyliusProductBundle** plugin allows you to create bundles from existing pr
                                          http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd"
    >
        <entity name="App\Entity\Product\Product" table="sylius_product">
-           <one-to-one field="productBundle" target-entity="BitBag\SyliusProductBundlePlugin\Entity\ProductBundleInterface" mapped-by="product">
+           <one-to-one field="productBundle" target-entity="Sylius\ProductBundlePlugin\Entity\ProductBundleInterface" mapped-by="product">
                <cascade>
                    <cascade-all/>
                </cascade>
@@ -177,9 +177,9 @@ The **SyliusProductBundle** plugin allows you to create bundles from existing pr
    
     namespace App\Entity\Order;
    
-    use BitBag\SyliusProductBundlePlugin\Entity\OrderItemInterface;
-    use BitBag\SyliusProductBundlePlugin\Entity\ProductBundleOrderItemInterface;
-    use BitBag\SyliusProductBundlePlugin\Entity\ProductBundleOrderItemsAwareTrait;
+    use Sylius\ProductBundlePlugin\Entity\OrderItemInterface;
+    use Sylius\ProductBundlePlugin\Entity\ProductBundleOrderItemInterface;
+    use Sylius\ProductBundlePlugin\Entity\ProductBundleOrderItemsAwareTrait;
     use Doctrine\Common\Collections\ArrayCollection;
     use Doctrine\ORM\Mapping as ORM;
     use Sylius\Component\Core\Model\OrderItem as BaseOrderItem;
@@ -200,7 +200,7 @@ The **SyliusProductBundle** plugin allows you to create bundles from existing pr
          * @var ArrayCollection|ProductBundleOrderItemInterface[]
          */
         #[ORM\OneToMany(
-            targetEntity: "BitBag\SyliusProductBundlePlugin\Entity\ProductBundleOrderItemInterface",
+            targetEntity: "Sylius\ProductBundlePlugin\Entity\ProductBundleOrderItemInterface",
             mappedBy: "orderItem",
             cascade: ["all"]
         )]
@@ -220,7 +220,7 @@ The **SyliusProductBundle** plugin allows you to create bundles from existing pr
                                          http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd"
    >
        <entity name="App\Entity\Order\OrderItem" table="sylius_order_item">
-           <one-to-many field="productBundleOrderItems" target-entity="BitBag\SyliusProductBundlePlugin\Entity\ProductBundleOrderItem" mapped-by="orderItem" >
+           <one-to-many field="productBundleOrderItems" target-entity="Sylius\ProductBundlePlugin\Entity\ProductBundleOrderItem" mapped-by="orderItem" >
                <cascade>
                    <cascade-all/>
                </cascade>
@@ -242,7 +242,7 @@ The **SyliusProductBundle** plugin allows you to create bundles from existing pr
             product_variant:
                 classes:
                     model: App\Entity\Product\ProductVariant
-                    repository: BitBag\SyliusProductBundlePlugin\Repository\ProductVariantRepository
+                    repository: Sylius\ProductBundlePlugin\\Repository\ProductVariantRepository
    sylius_order:
        resources:
            order_item:

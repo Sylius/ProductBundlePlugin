@@ -52,14 +52,14 @@ Sylius\Component\Core\Model\OrderItemUnit:
         __construct: ['@order_item_1']
         shipment: '@shipment_1'
 
-BitBag\SyliusProductBundlePlugin\Entity\ProductBundleOrderItem:
+Sylius\ProductBundlePlugin\Entity\ProductBundleOrderItem:
     product_bundle_order_item_{1..2}:
         orderItem: '@order_item_1'
         productBundleItem: '@productBundleItem<current()>'
         productVariant: '@productVariant<current()>'
         quantity: 1
 
-Tests\BitBag\SyliusProductBundlePlugin\Entity\OrderItem:
+Tests\Sylius\ProductBundlePlugin\Entity\OrderItem:
     order_item_1:
         order: '@order_with_bundle'
         unitPrice: 1800

@@ -11,10 +11,10 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusProductBundlePlugin\DataTransformer;
+namespace Sylius\ProductBundlePlugin\DataTransformer;
 
-use BitBag\SyliusProductBundlePlugin\Command\AddProductBundleToCartCommand;
-use BitBag\SyliusProductBundlePlugin\Dto\Api\AddProductBundleToCartDto;
+use Sylius\ProductBundlePlugin\Command\AddProductBundleToCartCommand;
+use Sylius\ProductBundlePlugin\Dto\Api\AddProductBundleToCartDto;
 use Sylius\Component\Order\Model\OrderInterface;
 use Webmozart\Assert\Assert;
 

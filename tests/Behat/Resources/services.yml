@@ -2,7 +2,7 @@ services:
   _defaults: { public: true }
 
   bitbag_sylius_product_bundle_plugin.behat.context.setup.product_bundle:
-    class: Tests\BitBag\SyliusProductBundlePlugin\Behat\Context\Setup\ProductBundleContext
+    class: Tests\Sylius\ProductBundlePlugin\Behat\Context\Setup\ProductBundleContext
     arguments:
       - '@sylius.behat.shared_storage'
       - '@sylius.factory.taxon'
@@ -16,13 +16,13 @@ services:
       - '@sylius.generator.slug'
 
   bitbag_sylius_product_bundle_plugin.behat.page.create_bundled_product_page:
-    class: Tests\BitBag\SyliusProductBundlePlugin\Behat\Page\Admin\CreateBundledProductPage
+    class: Tests\Sylius\ProductBundlePlugin\Behat\Page\Admin\CreateBundledProductPage
     parent: sylius.behat.page.admin.crud.create
     public: false
     arguments:
       - 'bitbag_product_bundle_admin_product_create_bundle'
 
   bitbag_sylius_product_bundle_plugin.behat.context.ui.product_bundle:
-    class: Tests\BitBag\SyliusProductBundlePlugin\Behat\Context\Ui\ProductBundleContext
+    class: Tests\Sylius\ProductBundlePlugin\Behat\Context\Ui\ProductBundleContext
     arguments:
       - '@bitbag_sylius_product_bundle_plugin.behat.page.create_bundled_product_page'

@@ -17,15 +17,15 @@
 
 declare(strict_types=1);
 
-namespace Tests\BitBag\SyliusProductBundlePlugin\Unit\DataTransformer;
+namespace Tests\Sylius\ProductBundlePlugin\Unit\DataTransformer;
 
-use BitBag\SyliusProductBundlePlugin\Command\AddProductBundleToCartCommand;
-use BitBag\SyliusProductBundlePlugin\DataTransformer\AddProductBundleToCartDtoDataTransformer;
-use BitBag\SyliusProductBundlePlugin\Dto\Api\AddProductBundleToCartDto;
+use Sylius\ProductBundlePlugin\Command\AddProductBundleToCartCommand;
+use Sylius\ProductBundlePlugin\DataTransformer\AddProductBundleToCartDtoDataTransformer;
+use Sylius\ProductBundlePlugin\Dto\Api\AddProductBundleToCartDto;
 use PHPUnit\Framework\TestCase;
-use Tests\BitBag\SyliusProductBundlePlugin\Unit\MotherObject\Api\AddProductBundleToCartDtoMother;
-use Tests\BitBag\SyliusProductBundlePlugin\Unit\MotherObject\OrderMother;
-use Tests\BitBag\SyliusProductBundlePlugin\Unit\TypeExceptionMessage;
+use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\Api\AddProductBundleToCartDtoMother;
+use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\OrderMother;
+use Tests\Sylius\ProductBundlePlugin\Unit\TypeExceptionMessage;
 use Webmozart\Assert\InvalidArgumentException;
 
 final class AddProductBundleToCartDtoDataTransformerTest extends TestCase

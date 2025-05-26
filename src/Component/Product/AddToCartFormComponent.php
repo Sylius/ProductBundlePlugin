@@ -11,11 +11,11 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusProductBundlePlugin\Component\Product;
+namespace Sylius\ProductBundlePlugin\Component\Product;
 
-use BitBag\SyliusProductBundlePlugin\Entity\OrderItemInterface;
-use BitBag\SyliusProductBundlePlugin\Entity\ProductInterface;
-use BitBag\SyliusProductBundlePlugin\Factory\AddProductBundleToCartDtoFactoryInterface;
+use Sylius\ProductBundlePlugin\Entity\OrderItemInterface;
+use Sylius\ProductBundlePlugin\Entity\ProductInterface;
+use Sylius\ProductBundlePlugin\Factory\AddProductBundleToCartDtoFactoryInterface;
 use Doctrine\Persistence\ObjectManager;
 use Sylius\Bundle\CoreBundle\Provider\FlashBagProvider;
 use Sylius\Bundle\OrderBundle\Factory\AddToCartCommandFactory;

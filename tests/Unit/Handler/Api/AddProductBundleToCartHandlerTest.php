@@ -11,19 +11,19 @@
 
 declare(strict_types=1);
 
-namespace Tests\BitBag\SyliusProductBundlePlugin\Unit\Handler\Api;
+namespace Tests\Sylius\ProductBundlePlugin\Unit\Handler\Api;
 
-use BitBag\SyliusProductBundlePlugin\Dto\Api\AddProductBundleToCartDto;
-use BitBag\SyliusProductBundlePlugin\Handler\AddProductBundleToCartHandler\CartProcessorInterface;
-use BitBag\SyliusProductBundlePlugin\Handler\Api\AddProductBundleToCartHandler;
+use Sylius\ProductBundlePlugin\Dto\Api\AddProductBundleToCartDto;
+use Sylius\ProductBundlePlugin\Handler\AddProductBundleToCartHandler\CartProcessorInterface;
+use Sylius\ProductBundlePlugin\Handler\Api\AddProductBundleToCartHandler;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Sylius\Component\Core\Repository\OrderRepositoryInterface;
 use Sylius\Component\Core\Repository\ProductRepositoryInterface;
-use Tests\BitBag\SyliusProductBundlePlugin\Unit\MotherObject\OrderMother;
-use Tests\BitBag\SyliusProductBundlePlugin\Unit\MotherObject\ProductBundleMother;
-use Tests\BitBag\SyliusProductBundlePlugin\Unit\MotherObject\ProductMother;
-use Tests\BitBag\SyliusProductBundlePlugin\Unit\TypeExceptionMessage;
+use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\OrderMother;
+use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\ProductBundleMother;
+use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\ProductMother;
+use Tests\Sylius\ProductBundlePlugin\Unit\TypeExceptionMessage;
 use Webmozart\Assert\InvalidArgumentException;
 
 final class AddProductBundleToCartHandlerTest extends TestCase

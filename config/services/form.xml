@@ -12,19 +12,19 @@
     </parameters>
 
     <services>
-        <service id="bitbag_sylius_product_bundle.form.type.product_bundle" class="BitBag\SyliusProductBundlePlugin\Form\Type\ProductBundleType">
+        <service id="bitbag_sylius_product_bundle.form.type.product_bundle" class="Sylius\ProductBundlePlugin\Form\Type\ProductBundleType">
             <argument>%bitbag_sylius_product_bundle.model.product_bundle.class%</argument>
             <argument>%bitbag_sylius_product_bundle.form.type.product_bundle.validation_groups%</argument>
             <tag name="form.type" />
         </service>
 
-        <service id="bitbag_sylius_product_bundle.form.type.product_bundle_item" class="BitBag\SyliusProductBundlePlugin\Form\Type\ProductBundleItemType">
+        <service id="bitbag_sylius_product_bundle.form.type.product_bundle_item" class="Sylius\ProductBundlePlugin\Form\Type\ProductBundleItemType">
             <argument>%bitbag_sylius_product_bundle.model.product_bundle_item.class%</argument>
             <argument>%bitbag_sylius_product_bundle.form.type.product_bundle_item.validation_groups%</argument>
             <tag name="form.type" />
         </service>
 
-        <service id="bitbag_sylius_product_bundle.form.extension.type.product" class="BitBag\SyliusProductBundlePlugin\Form\Extension\ProductTypeExtension">
+        <service id="bitbag_sylius_product_bundle.form.extension.type.product" class="Sylius\ProductBundlePlugin\Form\Extension\ProductTypeExtension">
             <tag name="form.type_extension" extended-type="Sylius\Bundle\AdminBundle\Form\Type\ProductType" />
         </service>
     </services>

@@ -9,10 +9,10 @@
 
 declare(strict_types=1);
 
-namespace Tests\BitBag\SyliusProductBundlePlugin\Entity;
+namespace Tests\Sylius\ProductBundlePlugin\Entity;
 
-use BitBag\SyliusProductBundlePlugin\Entity\OrderItemInterface;
-use BitBag\SyliusProductBundlePlugin\Entity\ProductBundleOrderItemsAwareTrait;
+use Sylius\ProductBundlePlugin\Entity\OrderItemInterface;
+use Sylius\ProductBundlePlugin\Entity\ProductBundleOrderItemsAwareTrait;
 use Sylius\Component\Core\Model\OrderItem as BaseOrderItem;
 
 class OrderItem extends BaseOrderItem implements OrderItemInterface

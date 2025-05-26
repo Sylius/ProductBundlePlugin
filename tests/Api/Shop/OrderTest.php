@@ -11,15 +11,15 @@
 
 declare(strict_types=1);
 
-namespace Tests\BitBag\SyliusProductBundlePlugin\Api\Shop;
+namespace Tests\Sylius\ProductBundlePlugin\Api\Shop;
 
-use BitBag\SyliusProductBundlePlugin\Entity\OrderItemInterface;
-use BitBag\SyliusProductBundlePlugin\Entity\ProductBundleInterface;
+use Sylius\ProductBundlePlugin\Entity\OrderItemInterface;
+use Sylius\ProductBundlePlugin\Entity\ProductBundleInterface;
 use Sylius\Component\Core\Model\OrderInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Tests\BitBag\SyliusProductBundlePlugin\Api\JsonApiTestCase;
-use Tests\BitBag\SyliusProductBundlePlugin\Api\Utils\CartHelperTrait;
+use Tests\Sylius\ProductBundlePlugin\Api\JsonApiTestCase;
+use Tests\Sylius\ProductBundlePlugin\Api\Utils\CartHelperTrait;
 
 final class OrderTest extends JsonApiTestCase
 {

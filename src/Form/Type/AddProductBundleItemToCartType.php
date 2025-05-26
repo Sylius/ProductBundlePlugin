@@ -11,10 +11,10 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusProductBundlePlugin\Form\Type;
+namespace Sylius\ProductBundlePlugin\Form\Type;
 
-use BitBag\SyliusProductBundlePlugin\Command\AddProductBundleItemToCartCommand;
-use BitBag\SyliusProductBundlePlugin\Entity\ProductInterface;
+use Sylius\ProductBundlePlugin\Command\AddProductBundleItemToCartCommand;
+use Sylius\ProductBundlePlugin\Entity\ProductInterface;
 use Sylius\Bundle\ProductBundle\Form\Type\ProductVariantChoiceType;
 use Sylius\Bundle\ProductBundle\Form\Type\ProductVariantMatchType;
 use Sylius\Component\Core\Model\Product;

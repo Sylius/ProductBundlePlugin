@@ -18,7 +18,7 @@
                     class="ApiPlatform\Metadata\Patch"
                     uriTemplate="/shop/orders/{tokenValue}/product-bundle"
                     messenger="input"
-                    input="BitBag\SyliusProductBundlePlugin\Dto\Api\AddProductBundleToCartDto"
+                    input="Sylius\ProductBundlePlugin\Dto\Api\AddProductBundleToCartDto"
             >
                 <validationContext>
                     <values>

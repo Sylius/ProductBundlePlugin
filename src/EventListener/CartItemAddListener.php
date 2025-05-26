@@ -11,9 +11,9 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusProductBundlePlugin\EventListener;
+namespace Sylius\ProductBundlePlugin\EventListener;
 
-use BitBag\SyliusProductBundlePlugin\Dto\AddProductBundleToCartDtoInterface;
+use Sylius\ProductBundlePlugin\Dto\AddProductBundleToCartDtoInterface;
 use Sylius\Component\Order\Modifier\OrderModifierInterface;
 use Symfony\Component\EventDispatcher\GenericEvent;
 use Webmozart\Assert\Assert;

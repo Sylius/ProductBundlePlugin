@@ -11,12 +11,12 @@
 
 declare(strict_types=1);
 
-namespace Tests\BitBag\SyliusProductBundlePlugin\Api\Admin;
+namespace Tests\Sylius\ProductBundlePlugin\Api\Admin;
 
-use BitBag\SyliusProductBundlePlugin\Entity\ProductBundleInterface;
+use Sylius\ProductBundlePlugin\Entity\ProductBundleInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Tests\BitBag\SyliusProductBundlePlugin\Api\AdminJsonApiTestCase;
+use Tests\Sylius\ProductBundlePlugin\Api\AdminJsonApiTestCase;
 
 final class ProductBundleTest extends AdminJsonApiTestCase
 {

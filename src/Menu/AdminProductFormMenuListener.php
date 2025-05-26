@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusProductBundlePlugin\Menu;
+namespace Sylius\ProductBundlePlugin\Menu;
 
 use Sylius\Bundle\AdminBundle\Event\ProductMenuBuilderEvent;
 

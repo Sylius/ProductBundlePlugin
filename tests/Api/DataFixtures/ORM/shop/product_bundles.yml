@@ -22,7 +22,7 @@ Sylius\Component\Core\Model\ProductTranslation:
         name: "Johnny Walker Gold"
         slug: "johnny-walker-gold"
 
-Tests\BitBag\SyliusProductBundlePlugin\Entity\Product:
+Tests\Sylius\ProductBundlePlugin\Entity\Product:
     product (template):
         fallbackLocale: "en_US"
         currentLocale: "en_US"
@@ -105,13 +105,13 @@ Sylius\Component\Core\Model\ProductVariant:
     productVariant{6} (extends productVariant):
         code: "JOHNNY_WALKER_GOLD"
 
-BitBag\SyliusProductBundlePlugin\Entity\ProductBundleItem:
+Sylius\ProductBundlePlugin\Entity\ProductBundleItem:
     productBundleItem{1..2}:
         productVariant: "@productVariant<current()>"
         quantity: 1
         productBundle: "@productBundle1"
 
-BitBag\SyliusProductBundlePlugin\Entity\ProductBundle:
+Sylius\ProductBundlePlugin\Entity\ProductBundle:
     productBundle1:
         product: "@product3"
         productBundleItems:

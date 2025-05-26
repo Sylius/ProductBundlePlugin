@@ -11,9 +11,9 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusProductBundlePlugin\Command;
+namespace Sylius\ProductBundlePlugin\Command;
 
-use BitBag\SyliusProductBundlePlugin\Entity\ProductBundleItemInterface;
+use Sylius\ProductBundlePlugin\Entity\ProductBundleItemInterface;
 use Sylius\Component\Core\Model\ProductVariantInterface;
 
 final class AddProductBundleItemToCartCommand

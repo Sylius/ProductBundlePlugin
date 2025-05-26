@@ -11,9 +11,9 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusProductBundlePlugin\Handler\AddProductBundleToCartHandler;
+namespace Sylius\ProductBundlePlugin\Handler\AddProductBundleToCartHandler;
 
-use BitBag\SyliusProductBundlePlugin\Entity\ProductBundleInterface;
+use Sylius\ProductBundlePlugin\Entity\ProductBundleInterface;
 use Sylius\Component\Order\Model\OrderInterface;
 
 interface CartProcessorInterface

@@ -9,7 +9,7 @@ bitbag_sylius_product_bundle_shop_ajax_cart_add_product_bundle:
                 method: createForProduct
                 arguments: [expr:notFoundOnNull(service('sylius.repository.product').find($productId))]
             form:
-                type: BitBag\SyliusProductBundlePlugin\Form\Type\AddProductBundleToCartType
+                type: Sylius\ProductBundlePlugin\Form\Type\AddProductBundleToCartType
                 options:
                     product: expr:notFoundOnNull(service('sylius.repository.product').find($productId))
             redirect:
@@ -28,7 +28,7 @@ bitbag_sylius_product_bundle_shop_partial_cart_add_product_bundle:
                 method: createForProduct
                 arguments: [expr:notFoundOnNull(service('sylius.repository.product').find($productId))]
             form:
-                type: BitBag\SyliusProductBundlePlugin\Form\Type\AddProductBundleToCartType
+                type: Sylius\ProductBundlePlugin\Form\Type\AddProductBundleToCartType
                 options:
                   product: expr:notFoundOnNull(service('sylius.repository.product').find($productId))
             redirect:

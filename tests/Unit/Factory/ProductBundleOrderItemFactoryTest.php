@@ -11,11 +11,11 @@
 
 declare(strict_types=1);
 
-namespace Tests\BitBag\SyliusProductBundlePlugin\Unit\Factory;
+namespace Tests\Sylius\ProductBundlePlugin\Unit\Factory;
 
-use BitBag\SyliusProductBundlePlugin\Entity\ProductBundleItem;
-use BitBag\SyliusProductBundlePlugin\Entity\ProductBundleOrderItem;
-use BitBag\SyliusProductBundlePlugin\Factory\ProductBundleOrderItemFactory;
+use Sylius\ProductBundlePlugin\Entity\ProductBundleItem;
+use Sylius\ProductBundlePlugin\Entity\ProductBundleOrderItem;
+use Sylius\ProductBundlePlugin\Factory\ProductBundleOrderItemFactory;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Sylius\Component\Core\Model\ProductVariant;

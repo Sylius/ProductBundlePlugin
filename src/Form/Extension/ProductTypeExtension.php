@@ -11,9 +11,9 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusProductBundlePlugin\Form\Extension;
+namespace Sylius\ProductBundlePlugin\Form\Extension;
 
-use BitBag\SyliusProductBundlePlugin\Form\Type\ProductBundleType;
+use Sylius\ProductBundlePlugin\Form\Type\ProductBundleType;
 use Sylius\Bundle\AdminBundle\Form\Type\ProductType;
 use Symfony\Component\Form\AbstractTypeExtension;
 use Symfony\Component\Form\FormBuilderInterface;

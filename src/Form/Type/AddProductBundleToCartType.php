@@ -11,10 +11,10 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusProductBundlePlugin\Form\Type;
+namespace Sylius\ProductBundlePlugin\Form\Type;
 
-use BitBag\SyliusProductBundlePlugin\Dto\AddProductBundleToCartDto;
-use BitBag\SyliusProductBundlePlugin\Entity\ProductInterface;
+use Sylius\ProductBundlePlugin\Dto\AddProductBundleToCartDto;
+use Sylius\ProductBundlePlugin\Entity\ProductInterface;
 use Sylius\Bundle\OrderBundle\Form\Type\CartItemType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
