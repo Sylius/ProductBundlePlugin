@@ -30,6 +30,12 @@ use Webmozart\Assert\InvalidArgumentException;
 
 final class AddProductBundleToCartDtoDataTransformerTest extends TestCase
 {
+    private const PRODUCT_CODE = 'PRODUCT_CODE';
+
+    private const ORDER_TOKEN_VALUE = 'ORDER_TOKEN_VALUE';
+
+    private const QUANTITY = 2;
+
     public function testThrowErrorIfObjectIsNotInstanceOfAddProductBundleToCartDto(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -48,7 +54,11 @@ final class AddProductBundleToCartDtoDataTransformerTest extends TestCase
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(TypeExceptionMessage::EXPECTED_VALUE_OTHER_THAN_NULL);
 
-        $object = AddProductBundleToCartDtoMother::create('PRODUCT_CODE');
+        $object = AddProductBundleToCartDtoMother::create(
+            self::PRODUCT_CODE,
+            self::ORDER_TOKEN_VALUE,
+            self::QUANTITY,
+        );
         $dataTransformer = new AddProductBundleToCartDtoDataTransformer();
 
         $dataTransformer->transform($object, '');
@@ -56,7 +66,11 @@ final class AddProductBundleToCartDtoDataTransformerTest extends TestCase
 
     public function testReturnAddProductBundleToCart(): void
     {
-        $object = AddProductBundleToCartDtoMother::create('PRODUCT_CODE', 2);
+        $object = AddProductBundleToCartDtoMother::create(
+            self::PRODUCT_CODE,
+            self::ORDER_TOKEN_VALUE,
+            self::QUANTITY,
+        );
         $context = [
             AddProductBundleToCartDtoDataTransformer::OBJECT_TO_POPULATE => OrderMother::createWithId(3),
         ];

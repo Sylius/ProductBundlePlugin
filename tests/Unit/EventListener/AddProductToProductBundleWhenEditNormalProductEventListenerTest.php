@@ -73,7 +73,7 @@ final class AddProductToProductBundleWhenEditNormalProductEventListenerTest exte
 
         // getProductBundle() called twice: once for assignment, once for setter
         $product
-            ->expects($this->exactly(2))
+            ->expects($this->once())
             ->method('getProductBundle')
             ->willReturn($bundle);
 

@@ -26,7 +26,7 @@ final class AddProductToProductBundleWhenEditNormalProductEventListener
         $bundle = $product->getProductBundle();
 
         if (null !== $bundle && null === $bundle->getProduct()) {
-            $product->getProductBundle()->setProduct($product);
+            $bundle->setProduct($product);
         }
     }
 }

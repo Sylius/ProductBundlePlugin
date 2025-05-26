@@ -31,8 +31,7 @@ final class HasProductBundleTest extends ConstraintValidatorTestCase
 
     private const PRODUCT_CODE = 'MY_PRODUCT';
 
-    /** @var mixed|MockObject|OrderRepositoryInterface */
-    private $productRepository;
+    private MockObject|OrderRepositoryInterface $productRepository;
 
     protected function setUp(): void
     {
@@ -56,7 +55,8 @@ final class HasProductBundleTest extends ConstraintValidatorTestCase
      */
     public function testPessimisticCase(?ProductInterface $product, ?string $violationMessage): void
     {
-        $this->productRepository->expects(self::once())
+        $this->productRepository
+            ->expects(self::once())
             ->method('findOneByCode')
             ->with(self::PRODUCT_CODE)
             ->willReturn($product)

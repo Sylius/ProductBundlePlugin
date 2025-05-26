@@ -17,8 +17,8 @@ use BitBag\SyliusProductBundlePlugin\Dto\Api\AddProductBundleToCartDto;
 
 final class AddProductBundleToCartDtoMother
 {
-    public static function create(string $productCode, int $quantity = 1): AddProductBundleToCartDto
+    public static function create(string $productCode, string $orderTokenValue, int $quantity = 1): AddProductBundleToCartDto
     {
-        return new AddProductBundleToCartDto($productCode, $quantity);
+        return new AddProductBundleToCartDto($productCode, $orderTokenValue, $quantity);
     }
 }
