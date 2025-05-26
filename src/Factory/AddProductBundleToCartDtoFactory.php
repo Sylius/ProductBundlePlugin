@@ -13,13 +13,13 @@ declare(strict_types=1);
 
 namespace Sylius\ProductBundlePlugin\Factory;
 
+use Sylius\Component\Order\Model\OrderInterface;
 use Sylius\ProductBundlePlugin\Command\AddProductBundleItemToCartCommand;
 use Sylius\ProductBundlePlugin\Dto\AddProductBundleToCartDto;
 use Sylius\ProductBundlePlugin\Dto\AddProductBundleToCartDtoInterface;
 use Sylius\ProductBundlePlugin\Entity\OrderItemInterface;
 use Sylius\ProductBundlePlugin\Entity\ProductBundleInterface;
 use Sylius\ProductBundlePlugin\Entity\ProductInterface;
-use Sylius\Component\Order\Model\OrderInterface;
 
 final class AddProductBundleToCartDtoFactory implements AddProductBundleToCartDtoFactoryInterface
 {

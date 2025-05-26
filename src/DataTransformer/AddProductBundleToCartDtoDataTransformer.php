@@ -13,9 +13,9 @@ declare(strict_types=1);
 
 namespace Sylius\ProductBundlePlugin\DataTransformer;
 
+use Sylius\Component\Order\Model\OrderInterface;
 use Sylius\ProductBundlePlugin\Command\AddProductBundleToCartCommand;
 use Sylius\ProductBundlePlugin\Dto\Api\AddProductBundleToCartDto;
-use Sylius\Component\Order\Model\OrderInterface;
 use Webmozart\Assert\Assert;
 
 final class AddProductBundleToCartDtoDataTransformer

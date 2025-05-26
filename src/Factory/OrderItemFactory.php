@@ -13,11 +13,11 @@ declare(strict_types=1);
 
 namespace Sylius\ProductBundlePlugin\Factory;
 
-use Sylius\ProductBundlePlugin\Entity\OrderItemInterface;
 use Sylius\Component\Core\Factory\CartItemFactoryInterface;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Model\ProductInterface;
 use Sylius\Component\Core\Model\ProductVariantInterface;
+use Sylius\ProductBundlePlugin\Entity\OrderItemInterface;
 
 final class OrderItemFactory implements OrderItemFactoryInterface
 {

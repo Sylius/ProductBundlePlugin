@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace Sylius\ProductBundlePlugin\Command;
 
-use Sylius\ProductBundlePlugin\Entity\ProductBundleItemInterface;
 use Sylius\Component\Core\Model\ProductVariantInterface;
+use Sylius\ProductBundlePlugin\Entity\ProductBundleItemInterface;
 
 final class AddProductBundleItemToCartCommand
 {

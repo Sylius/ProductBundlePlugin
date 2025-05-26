@@ -13,9 +13,9 @@ declare(strict_types=1);
 
 namespace Sylius\ProductBundlePlugin\Factory;
 
+use Sylius\Component\Resource\Factory\FactoryInterface;
 use Sylius\ProductBundlePlugin\Entity\ProductBundleItemInterface;
 use Sylius\ProductBundlePlugin\Entity\ProductBundleOrderItemInterface;
-use Sylius\Component\Resource\Factory\FactoryInterface;
 
 interface ProductBundleOrderItemFactoryInterface extends FactoryInterface
 {

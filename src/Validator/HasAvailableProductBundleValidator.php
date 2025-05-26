@@ -13,8 +13,6 @@ declare(strict_types=1);
 
 namespace Sylius\ProductBundlePlugin\Validator;
 
-use Sylius\ProductBundlePlugin\Command\AddProductBundleToCartCommand;
-use Sylius\ProductBundlePlugin\Entity\OrderItemInterface;
 use Sylius\Component\Channel\Model\ChannelInterface;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Model\ProductInterface;
@@ -22,6 +20,8 @@ use Sylius\Component\Core\Model\ProductVariantInterface;
 use Sylius\Component\Core\Repository\OrderRepositoryInterface;
 use Sylius\Component\Core\Repository\ProductRepositoryInterface;
 use Sylius\Component\Inventory\Checker\AvailabilityCheckerInterface;
+use Sylius\ProductBundlePlugin\Command\AddProductBundleToCartCommand;
+use Sylius\ProductBundlePlugin\Entity\OrderItemInterface;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Webmozart\Assert\Assert;

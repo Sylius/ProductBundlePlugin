@@ -13,9 +13,9 @@ declare(strict_types=1);
 
 namespace Sylius\ProductBundlePlugin\Form\Type;
 
+use Sylius\Bundle\OrderBundle\Form\Type\CartItemType;
 use Sylius\ProductBundlePlugin\Dto\AddProductBundleToCartDto;
 use Sylius\ProductBundlePlugin\Entity\ProductInterface;
-use Sylius\Bundle\OrderBundle\Form\Type\CartItemType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\FormBuilderInterface;

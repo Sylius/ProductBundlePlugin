@@ -1,2 +1,2 @@
 bitbag_sylius_product_bundle_plugin:
-    resource: "@BitBagSyliusProductBundlePlugin/config/routes.yml"
+    resource: "@SyliusProductBundlePlugin/config/routes.yml"

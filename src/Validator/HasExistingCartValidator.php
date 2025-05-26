@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace Sylius\ProductBundlePlugin\Validator;
 
-use Sylius\ProductBundlePlugin\Command\OrderIdentityAwareInterface;
 use Sylius\Component\Core\Repository\OrderRepositoryInterface;
+use Sylius\ProductBundlePlugin\Command\OrderIdentityAwareInterface;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedValueException;

@@ -13,13 +13,13 @@ declare(strict_types=1);
 
 namespace Sylius\ProductBundlePlugin\Handler\AddProductBundleToCartHandler;
 
-use Sylius\ProductBundlePlugin\Entity\ProductBundleInterface;
-use Sylius\ProductBundlePlugin\Factory\OrderItemFactoryInterface;
-use Sylius\ProductBundlePlugin\Factory\ProductBundleOrderItemFactoryInterface;
 use Sylius\Component\Core\Model\ProductVariantInterface;
 use Sylius\Component\Order\Model\OrderInterface;
 use Sylius\Component\Order\Modifier\OrderItemQuantityModifierInterface;
 use Sylius\Component\Order\Modifier\OrderModifierInterface;
+use Sylius\ProductBundlePlugin\Entity\ProductBundleInterface;
+use Sylius\ProductBundlePlugin\Factory\OrderItemFactoryInterface;
+use Sylius\ProductBundlePlugin\Factory\ProductBundleOrderItemFactoryInterface;
 use Webmozart\Assert\Assert;
 
 final class CartProcessor implements CartProcessorInterface

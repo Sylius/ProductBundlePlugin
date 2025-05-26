@@ -13,15 +13,15 @@ declare(strict_types=1);
 
 namespace Tests\Sylius\ProductBundlePlugin\Unit\Validator;
 
-use Sylius\ProductBundlePlugin\Command\AddProductBundleToCartCommand;
-use Sylius\ProductBundlePlugin\Entity\ProductInterface;
-use Sylius\ProductBundlePlugin\Validator\HasAvailableProductBundle;
-use Sylius\ProductBundlePlugin\Validator\HasAvailableProductBundleValidator;
 use PHPUnit\Framework\MockObject\MockObject;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Repository\OrderRepositoryInterface;
 use Sylius\Component\Core\Repository\ProductRepositoryInterface;
 use Sylius\Component\Inventory\Checker\AvailabilityCheckerInterface;
+use Sylius\ProductBundlePlugin\Command\AddProductBundleToCartCommand;
+use Sylius\ProductBundlePlugin\Entity\ProductInterface;
+use Sylius\ProductBundlePlugin\Validator\HasAvailableProductBundle;
+use Sylius\ProductBundlePlugin\Validator\HasAvailableProductBundleValidator;
 use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
 use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\ChannelMother;
 use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\OrderMother;

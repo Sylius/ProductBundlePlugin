@@ -13,9 +13,9 @@ declare(strict_types=1);
 
 namespace Tests\Sylius\ProductBundlePlugin\Api\Shop;
 
+use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\ProductBundlePlugin\Entity\OrderItemInterface;
 use Sylius\ProductBundlePlugin\Entity\ProductBundleInterface;
-use Sylius\Component\Core\Model\OrderInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Tests\Sylius\ProductBundlePlugin\Api\JsonApiTestCase;

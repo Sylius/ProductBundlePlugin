@@ -13,11 +13,11 @@ declare(strict_types=1);
 
 namespace Sylius\ProductBundlePlugin\Factory;
 
-use Sylius\ProductBundlePlugin\Entity\ProductBundleInterface;
-use Sylius\ProductBundlePlugin\Entity\ProductInterface;
 use Sylius\Component\Product\Factory\ProductFactoryInterface as DecoratedProductFactoryInterface;
 use Sylius\Component\Product\Model\ProductInterface as BaseProductInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
+use Sylius\ProductBundlePlugin\Entity\ProductBundleInterface;
+use Sylius\ProductBundlePlugin\Entity\ProductInterface;
 
 final class ProductFactory implements ProductFactoryInterface
 {

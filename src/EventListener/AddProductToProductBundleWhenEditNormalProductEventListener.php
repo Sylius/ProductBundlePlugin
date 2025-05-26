@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace Sylius\ProductBundlePlugin\EventListener;
 
-use Sylius\ProductBundlePlugin\Entity\ProductInterface;
 use Sylius\Bundle\ResourceBundle\Event\ResourceControllerEvent;
+use Sylius\ProductBundlePlugin\Entity\ProductInterface;
 
 final class AddProductToProductBundleWhenEditNormalProductEventListener
 {

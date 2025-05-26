@@ -13,13 +13,13 @@ declare(strict_types=1);
 
 namespace Sylius\ProductBundlePlugin\Handler\Api;
 
+use Sylius\Component\Core\Model\OrderInterface;
+use Sylius\Component\Core\Repository\OrderRepositoryInterface;
+use Sylius\Component\Core\Repository\ProductRepositoryInterface;
 use Sylius\ProductBundlePlugin\Dto\Api\AddProductBundleToCartDto;
 use Sylius\ProductBundlePlugin\Entity\ProductBundleInterface;
 use Sylius\ProductBundlePlugin\Entity\ProductInterface;
 use Sylius\ProductBundlePlugin\Handler\AddProductBundleToCartHandler\CartProcessorInterface;
-use Sylius\Component\Core\Model\OrderInterface;
-use Sylius\Component\Core\Repository\OrderRepositoryInterface;
-use Sylius\Component\Core\Repository\ProductRepositoryInterface;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 use Webmozart\Assert\Assert;
 

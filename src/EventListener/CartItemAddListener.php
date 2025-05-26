@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace Sylius\ProductBundlePlugin\EventListener;
 
-use Sylius\ProductBundlePlugin\Dto\AddProductBundleToCartDtoInterface;
 use Sylius\Component\Order\Modifier\OrderModifierInterface;
+use Sylius\ProductBundlePlugin\Dto\AddProductBundleToCartDtoInterface;
 use Symfony\Component\EventDispatcher\GenericEvent;
 use Webmozart\Assert\Assert;
 

@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace Sylius\ProductBundlePlugin\Handler\AddProductBundleToCartHandler;
 
-use Sylius\ProductBundlePlugin\Entity\ProductBundleInterface;
 use Sylius\Component\Order\Model\OrderInterface;
+use Sylius\ProductBundlePlugin\Entity\ProductBundleInterface;
 
 interface CartProcessorInterface
 {

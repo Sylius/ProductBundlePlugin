@@ -14,9 +14,6 @@ declare(strict_types=1);
 namespace Tests\Sylius\ProductBundlePlugin\Behat\Context\Setup;
 
 use Behat\Behat\Context\Context;
-use Sylius\ProductBundlePlugin\Entity\ProductBundleItemInterface;
-use Sylius\ProductBundlePlugin\Entity\ProductInterface;
-use Sylius\ProductBundlePlugin\Factory\ProductFactory;
 use Doctrine\ORM\EntityManagerInterface;
 use Sylius\Behat\Service\SharedStorageInterface;
 use Sylius\Component\Core\Formatter\StringInflector;
@@ -29,6 +26,9 @@ use Sylius\Component\Core\Repository\ProductRepositoryInterface;
 use Sylius\Component\Product\Generator\SlugGeneratorInterface;
 use Sylius\Component\Product\Resolver\ProductVariantResolverInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
+use Sylius\ProductBundlePlugin\Entity\ProductBundleItemInterface;
+use Sylius\ProductBundlePlugin\Entity\ProductInterface;
+use Sylius\ProductBundlePlugin\Factory\ProductFactory;
 
 final class ProductBundleContext implements Context
 {

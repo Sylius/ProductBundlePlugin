@@ -13,9 +13,9 @@ declare(strict_types=1);
 
 namespace Sylius\ProductBundlePlugin\Validator;
 
+use Sylius\Component\Core\Repository\ProductRepositoryInterface;
 use Sylius\ProductBundlePlugin\Command\ProductCodeAwareInterface;
 use Sylius\ProductBundlePlugin\Entity\ProductInterface;
-use Sylius\Component\Core\Repository\ProductRepositoryInterface;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedValueException;

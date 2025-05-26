@@ -13,15 +13,15 @@ declare(strict_types=1);
 
 namespace Tests\Sylius\ProductBundlePlugin\Unit\Handler;
 
-use Sylius\ProductBundlePlugin\Command\AddProductBundleToCartCommand;
-use Sylius\ProductBundlePlugin\Entity\ProductInterface;
-use Sylius\ProductBundlePlugin\Handler\AddProductBundleToCartHandler;
-use Sylius\ProductBundlePlugin\Handler\AddProductBundleToCartHandler\CartProcessorInterface;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Repository\OrderRepositoryInterface;
 use Sylius\Component\Core\Repository\ProductRepositoryInterface;
+use Sylius\ProductBundlePlugin\Command\AddProductBundleToCartCommand;
+use Sylius\ProductBundlePlugin\Entity\ProductInterface;
+use Sylius\ProductBundlePlugin\Handler\AddProductBundleToCartHandler;
+use Sylius\ProductBundlePlugin\Handler\AddProductBundleToCartHandler\CartProcessorInterface;
 use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\OrderMother;
 use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\ProductBundleMother;
 use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\ProductMother;

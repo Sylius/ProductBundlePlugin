@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace Sylius\ProductBundlePlugin;
 
-use Sylius\ProductBundlePlugin\DependencyInjection\CompilerPass\AuthenticationManagerPolyfillPass;
 use Sylius\Bundle\CoreBundle\Application\SyliusPluginTrait;
+use Sylius\ProductBundlePlugin\DependencyInjection\CompilerPass\AuthenticationManagerPolyfillPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

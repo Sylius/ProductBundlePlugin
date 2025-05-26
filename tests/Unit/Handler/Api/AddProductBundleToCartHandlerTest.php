@@ -13,13 +13,13 @@ declare(strict_types=1);
 
 namespace Tests\Sylius\ProductBundlePlugin\Unit\Handler\Api;
 
-use Sylius\ProductBundlePlugin\Dto\Api\AddProductBundleToCartDto;
-use Sylius\ProductBundlePlugin\Handler\AddProductBundleToCartHandler\CartProcessorInterface;
-use Sylius\ProductBundlePlugin\Handler\Api\AddProductBundleToCartHandler;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Sylius\Component\Core\Repository\OrderRepositoryInterface;
 use Sylius\Component\Core\Repository\ProductRepositoryInterface;
+use Sylius\ProductBundlePlugin\Dto\Api\AddProductBundleToCartDto;
+use Sylius\ProductBundlePlugin\Handler\AddProductBundleToCartHandler\CartProcessorInterface;
+use Sylius\ProductBundlePlugin\Handler\Api\AddProductBundleToCartHandler;
 use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\OrderMother;
 use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\ProductBundleMother;
 use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\ProductMother;

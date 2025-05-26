@@ -13,13 +13,13 @@ declare(strict_types=1);
 
 namespace Tests\Sylius\ProductBundlePlugin\Unit\Validator;
 
+use PHPUnit\Framework\MockObject\MockObject;
+use Sylius\Component\Core\Repository\OrderRepositoryInterface;
+use Sylius\Component\Core\Repository\ProductRepositoryInterface;
 use Sylius\ProductBundlePlugin\Command\AddProductBundleToCartCommand;
 use Sylius\ProductBundlePlugin\Entity\ProductInterface;
 use Sylius\ProductBundlePlugin\Validator\HasProductBundle;
 use Sylius\ProductBundlePlugin\Validator\HasProductBundleValidator;
-use PHPUnit\Framework\MockObject\MockObject;
-use Sylius\Component\Core\Repository\OrderRepositoryInterface;
-use Sylius\Component\Core\Repository\ProductRepositoryInterface;
 use Symfony\Component\Validator\Exception\UnexpectedValueException;
 use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
 use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\ProductBundleMother;

@@ -19,10 +19,10 @@ declare(strict_types=1);
 
 namespace Tests\Sylius\ProductBundlePlugin\Unit\DataTransformer;
 
+use PHPUnit\Framework\TestCase;
 use Sylius\ProductBundlePlugin\Command\AddProductBundleToCartCommand;
 use Sylius\ProductBundlePlugin\DataTransformer\AddProductBundleToCartDtoDataTransformer;
 use Sylius\ProductBundlePlugin\Dto\Api\AddProductBundleToCartDto;
-use PHPUnit\Framework\TestCase;
 use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\Api\AddProductBundleToCartDtoMother;
 use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\OrderMother;
 use Tests\Sylius\ProductBundlePlugin\Unit\TypeExceptionMessage;

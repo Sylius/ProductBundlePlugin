@@ -1,7 +1,7 @@
 imports:
   - { resource: resources.yml }
   - { resource: services.xml }
-  - { resource: "@BitBagSyliusProductBundlePlugin/config/twig_hooks/twig_hooks.yaml" }
+  - { resource: "@SyliusProductBundlePlugin/config/twig_hooks/twig_hooks.yaml" }
 
 framework:
   messenger:

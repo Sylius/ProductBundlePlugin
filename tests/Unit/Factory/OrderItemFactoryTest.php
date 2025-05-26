@@ -13,10 +13,10 @@ declare(strict_types=1);
 
 namespace Tests\Sylius\ProductBundlePlugin\Unit\Factory;
 
-use Sylius\ProductBundlePlugin\Factory\OrderItemFactory;
 use PHPUnit\Framework\TestCase;
 use Sylius\Component\Core\Factory\CartItemFactoryInterface;
 use Sylius\Component\Core\Model\ProductVariant;
+use Sylius\ProductBundlePlugin\Factory\OrderItemFactory;
 use Tests\Sylius\ProductBundlePlugin\Entity\OrderItem;
 
 final class OrderItemFactoryTest extends TestCase

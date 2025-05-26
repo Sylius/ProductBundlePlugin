@@ -13,10 +13,10 @@ declare(strict_types=1);
 
 namespace Sylius\ProductBundlePlugin\Dto;
 
-use Sylius\ProductBundlePlugin\Entity\ProductInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Sylius\Component\Order\Model\OrderInterface;
 use Sylius\Component\Order\Model\OrderItemInterface;
+use Sylius\ProductBundlePlugin\Entity\ProductInterface;
 
 interface AddProductBundleToCartDtoInterface
 {

@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace Sylius\ProductBundlePlugin\Form\Extension;
 
-use Sylius\ProductBundlePlugin\Form\Type\ProductBundleType;
 use Sylius\Bundle\AdminBundle\Form\Type\ProductType;
+use Sylius\ProductBundlePlugin\Form\Type\ProductBundleType;
 use Symfony\Component\Form\AbstractTypeExtension;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\Valid;

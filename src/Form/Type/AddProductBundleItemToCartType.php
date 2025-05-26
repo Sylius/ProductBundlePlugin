@@ -13,12 +13,12 @@ declare(strict_types=1);
 
 namespace Sylius\ProductBundlePlugin\Form\Type;
 
-use Sylius\ProductBundlePlugin\Command\AddProductBundleItemToCartCommand;
-use Sylius\ProductBundlePlugin\Entity\ProductInterface;
 use Sylius\Bundle\ProductBundle\Form\Type\ProductVariantChoiceType;
 use Sylius\Bundle\ProductBundle\Form\Type\ProductVariantMatchType;
 use Sylius\Component\Core\Model\Product;
 use Sylius\Component\Core\Model\ProductVariantInterface;
+use Sylius\ProductBundlePlugin\Command\AddProductBundleItemToCartCommand;
+use Sylius\ProductBundlePlugin\Entity\ProductInterface;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;

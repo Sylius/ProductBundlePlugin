@@ -13,9 +13,9 @@ declare(strict_types=1);
 
 namespace Tests\Sylius\ProductBundlePlugin\Unit\Factory;
 
+use PHPUnit\Framework\TestCase;
 use Sylius\ProductBundlePlugin\Command\AddProductBundleItemToCartCommand;
 use Sylius\ProductBundlePlugin\Factory\AddProductBundleItemToCartCommandFactory;
-use PHPUnit\Framework\TestCase;
 use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\ProductBundleItemMother;
 
 final class AddProductBundleItemToCartCommandFactoryTest extends TestCase

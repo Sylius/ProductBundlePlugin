@@ -94,7 +94,7 @@ The **SyliusProductBundle** plugin allows you to create bundles from existing pr
     imports:
         ...
         
-        - { resource: "@BitBagSyliusProductBundlePlugin/config/config.yml" }
+        - { resource: "@SyliusProductBundlePlugin/config/config.yml" }
     ```    
 
 4. Import routing in your `config/routes.yaml` file:
@@ -105,7 +105,7 @@ The **SyliusProductBundle** plugin allows you to create bundles from existing pr
     ...
     
     bitbag_sylius_product_bundle_plugin:
-        resource: "@BitBagSyliusProductBundlePlugin/config/routes.yml"
+        resource: "@SyliusProductBundlePlugin/config/routes.yml"
     ```
 
 5. Extend `Product`(including Doctrine mapping):

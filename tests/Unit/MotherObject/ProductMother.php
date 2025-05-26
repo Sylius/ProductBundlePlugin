@@ -13,10 +13,10 @@ declare(strict_types=1);
 
 namespace Tests\Sylius\ProductBundlePlugin\Unit\MotherObject;
 
-use Sylius\ProductBundlePlugin\Entity\ProductBundleInterface;
-use Sylius\ProductBundlePlugin\Entity\ProductInterface;
 use Sylius\Component\Core\Model\ChannelInterface;
 use Sylius\Component\Core\Model\ProductVariantInterface;
+use Sylius\ProductBundlePlugin\Entity\ProductBundleInterface;
+use Sylius\ProductBundlePlugin\Entity\ProductInterface;
 use Tests\Sylius\ProductBundlePlugin\Entity\Product;
 
 final class ProductMother
