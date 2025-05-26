@@ -43,13 +43,11 @@ final class AddProductToProductBundleWhenEditNormalProductEventListenerTest exte
             ->method('getSubject')
             ->willReturn($product);
 
-        // product has no bundle
         $product
             ->expects($this->once())
             ->method('getProductBundle')
             ->willReturn(null);
 
-        // Should not throw or call bundle methods
         $this->listener->addProductToProductBundle($event);
 
         $this->assertTrue(true, 'No exception means pass');
@@ -71,19 +69,16 @@ final class AddProductToProductBundleWhenEditNormalProductEventListenerTest exte
             ->method('getSubject')
             ->willReturn($product);
 
-        // getProductBundle() called twice: once for assignment, once for setter
         $product
             ->expects($this->once())
             ->method('getProductBundle')
             ->willReturn($bundle);
 
-        // Bundle has no product
         $bundle
             ->expects($this->once())
             ->method('getProduct')
             ->willReturn(null);
 
-        // Expect setProduct() on the bundle instance
         $bundle
             ->expects($this->once())
             ->method('setProduct')
@@ -112,19 +107,16 @@ final class AddProductToProductBundleWhenEditNormalProductEventListenerTest exte
             ->method('getSubject')
             ->willReturn($product);
 
-        // getProductBundle() called once (assignment)
         $product
             ->expects($this->once())
             ->method('getProductBundle')
             ->willReturn($bundle);
 
-        // Bundle already has a product
         $bundle
             ->expects($this->once())
             ->method('getProduct')
             ->willReturn($existingProduct);
 
-        // setProduct() should never be called
         $bundle
             ->expects($this->never())
             ->method('setProduct');
