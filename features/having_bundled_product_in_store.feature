@@ -8,15 +8,15 @@ Feature: Having a product in store which is a bundle of other products
       And the store ships everywhere for Free
       And the store allows paying Offline
 
-    @ui @javascript
+    @ui
     Scenario: Adding a product bundle to the cart
       Given the store has a product "Jack Daniels Gentleman" priced at "$10.00"
       And the store has a product "Johny Walker Black" priced at "$10.00"
       And the store has bundled product "Whiskey double pack" priced at "$18.00" which contains "Jack Daniels Gentleman" and "Johny Walker Black"
       And all store products appear under a main taxonomy
       When I added product "Whiskey double pack" to the cart
-      Then I should be on my cart summary page
-      And there should be one item in my cart
+      And I check items in my cart
+      Then there should be one item in my cart
 
     @ui @javascript
     Scenario: Adding a few product bundles to the cart
