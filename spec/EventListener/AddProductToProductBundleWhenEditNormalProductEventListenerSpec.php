@@ -26,7 +26,7 @@ final class AddProductToProductBundleWhenEditNormalProductEventListenerSpec exte
     public function it_should_add_product_to_product_bundle_if_not_exist_on_pre_create_and_update_event(
         ResourceControllerEvent $resourceControllerEvent,
         ProductInterface $product,
-        ProductBundleInterface $productBundle
+        ProductBundleInterface $productBundle,
     ): void {
         $resourceControllerEvent->getSubject()->willReturn($product);
 

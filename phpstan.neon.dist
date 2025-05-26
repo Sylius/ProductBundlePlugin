@@ -1,18 +1,12 @@
 parameters:
     reportUnmatchedIgnoredErrors: false
-    checkMissingIterableValueType: false
-
-    level: 7
+    level: 8
     paths:
         - src
 
-    excludes_analyse:
-        # Makes PHPStan crash
+    excludePaths:
         - 'src/DependencyInjection/Configuration.php'
-
-        # Test dependencies
-        - 'tests/Application/app/**.php'
-        - 'tests/Application/src/**.php'
+        - 'tests/Application/**.php'
 
     ignoreErrors:
         - '/Parameter #1 \$productRepository of method BitBag\\SyliusProductBundlePlugin\\Component\\Product\\AddToCartFormComponent::initializeProduct\(\) expects Sylius\\Component\\Core\\Repository\\ProductRepositoryInterface<Sylius\\Component\\Core\\Model\\ProductInterface>, Sylius\\Component\\Core\\Repository\\ProductRepositoryInterface<BitBag\\SyliusProductBundlePlugin\\Entity\\ProductInterface> given\./'
