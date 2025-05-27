@@ -31,6 +31,7 @@ final readonly class AddProductBundleToCartHandler
         private CartProcessorInterface $cartProcessor,
     ) {
     }
+
     public function __invoke(AddProductBundleToCartCommand $addProductBundleToCartCommand): void
     {
         $cart = $this->orderRepository->findCartById($addProductBundleToCartCommand->getOrderId());

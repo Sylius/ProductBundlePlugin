@@ -22,17 +22,14 @@ class ProductBundle implements ProductBundleInterface
 {
     use TimestampableTrait;
 
-    /** @var int */
-    protected $id;
+    protected mixed $id = null;
 
-    /** @var ProductInterface|null */
-    protected $product;
+    protected ?ProductInterface $product;
 
     /** @var ProductBundleItemInterface[]|Collection */
-    protected $productBundleItems;
+    protected Collection $productBundleItems;
 
-    /** @var bool */
-    protected $isPackedProduct = false;
+    protected bool $isPackedProduct = false;
 
     public function __construct()
     {

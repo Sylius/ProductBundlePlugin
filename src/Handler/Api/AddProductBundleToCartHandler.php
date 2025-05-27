@@ -32,6 +32,7 @@ final readonly class AddProductBundleToCartHandler
         private CartProcessorInterface $cartProcessor,
     ) {
     }
+
     public function __invoke(AddProductBundleToCartDto $addProductBundleToCartCommand): OrderInterface
     {
         /** @var OrderInterface|null $cart */
