@@ -74,7 +74,7 @@ final class HasProductBundleTest extends ConstraintValidatorTestCase
         }
     }
 
-    public function pessimisticDataProvider(): array
+    public static function pessimisticDataProvider(): array
     {
         return [
             'product is a null' => [null, HasProductBundle::PRODUCT_DOESNT_EXIST_MESSAGE],

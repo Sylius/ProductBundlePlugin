@@ -24,6 +24,7 @@ use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\OrderMother;
 use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\ProductBundleItemMother;
 use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\ProductBundleMother;
 use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\ProductMother;
+use Webmozart\Assert\Assert;
 
 final class AddProductBundleToCartDtoFactoryTest extends TestCase
 {
@@ -44,11 +45,18 @@ final class AddProductBundleToCartDtoFactoryTest extends TestCase
         $addProductBundleItemToCartCommand1 = AddProductBundleItemToCartCommandMother::create($bundleItem1);
         $addProductBundleItemToCartCommand2 = AddProductBundleItemToCartCommandMother::create($bundleItem2);
 
-        $this->addProductBundleItemToCartCommandFactory->expects(self::exactly(2))
+        $expectedArgs = [[$bundleItem1], [$bundleItem2]];
+        $returnValues = [$addProductBundleItemToCartCommand1, $addProductBundleItemToCartCommand2];
+        $callIndex = 0;
+
+        $this->addProductBundleItemToCartCommandFactory
+            ->expects(self::exactly(2))
             ->method('createNew')
-            ->withConsecutive([$bundleItem1], [$bundleItem2])
-            ->willReturnOnConsecutiveCalls($addProductBundleItemToCartCommand1, $addProductBundleItemToCartCommand2)
-        ;
+            ->willReturnCallback(function (...$args) use (&$callIndex, $expectedArgs, $returnValues) {
+                Assert::same($expectedArgs[$callIndex], $args);
+
+                return $returnValues[$callIndex++];
+            });
 
         $factory = new AddProductBundleToCartDtoFactory($this->addProductBundleItemToCartCommandFactory);
 

@@ -90,15 +90,15 @@ final class HasAvailableProductBundleValidatorTest extends ConstraintValidatorTe
             ->assertRaised();
     }
 
-    public function pessimisticDataProvider(): iterable
+    public static function pessimisticDataProvider(): iterable
     {
-        yield 'product is disabled' => $this->getProductDisabledCaseData();
-        yield 'product variant is disabled' => $this->getProductVariantDisabledCaseData();
-        yield 'product\'s channel and cart\'s channel are different' => $this->getProductAndCartChannelsAreDifferentCaseData();
-        yield 'product\'s quantity in the cart exceeds the stock' => $this->getProductQuantityExceedsStockCaseData();
+        yield 'product is disabled' => self::getProductDisabledCaseData();
+        yield 'product variant is disabled' => self::getProductVariantDisabledCaseData();
+        yield 'product\'s channel and cart\'s channel are different' => self::getProductAndCartChannelsAreDifferentCaseData();
+        yield 'product\'s quantity in the cart exceeds the stock' => self::getProductQuantityExceedsStockCaseData();
     }
 
-    private function getProductDisabledCaseData(): array
+    private static function getProductDisabledCaseData(): array
     {
         $product = ProductMother::createDisabledWithCode(self::PRODUCT_CODE);
         $violationMessage = HasAvailableProductBundle::PRODUCT_DISABLED_MESSAGE;
@@ -109,7 +109,7 @@ final class HasAvailableProductBundleValidatorTest extends ConstraintValidatorTe
         return [$product, null, false, $violationMessage, $violationParameters];
     }
 
-    private function getProductVariantDisabledCaseData(): array
+    private static function getProductVariantDisabledCaseData(): array
     {
         $productVariant = ProductVariantMother::createDisabledWithCode(self::PRODUCT_CODE);
         $product = ProductMother::createWithProductVariantAndCode($productVariant, self::PRODUCT_CODE);
@@ -121,7 +121,7 @@ final class HasAvailableProductBundleValidatorTest extends ConstraintValidatorTe
         return [$product, null, false, $violationMessage, $violationParameters];
     }
 
-    private function getProductAndCartChannelsAreDifferentCaseData(): array
+    private static function getProductAndCartChannelsAreDifferentCaseData(): array
     {
         $productVariant = ProductVariantMother::createWithCode(self::PRODUCT_CODE);
         $product = ProductMother::createWithProductVariantAndCode($productVariant, self::PRODUCT_CODE);
@@ -138,7 +138,7 @@ final class HasAvailableProductBundleValidatorTest extends ConstraintValidatorTe
         return [$product, $cart, false, $violationMessage, $violationParameters];
     }
 
-    private function getProductQuantityExceedsStockCaseData(): array
+    private static function getProductQuantityExceedsStockCaseData(): array
     {
         $channel = ChannelMother::createWithName(self::CHANNEL_NAME);
         $productVariant = ProductVariantMother::createWithCode(self::PRODUCT_CODE);
