@@ -50,7 +50,7 @@ final class ProductBundleOrderItemExtension extends AbstractExtension
 
         $items = $productBundle->getProductBundleItems();
 
-        return $this->twig->render('@SyliusProductBundlePlugin/Admin/Order/Show/_productBundleOrderItems.html.twig', [
+        return $this->twig->render('@SyliusProductBundlePlugin/admin/order/show/product_bundle_order_items.html.twig', [
             'items' => $items,
         ]);
     }
