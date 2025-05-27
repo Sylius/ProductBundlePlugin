@@ -23,7 +23,7 @@ use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 use Webmozart\Assert\Assert;
 
 #[AsMessageHandler]
-final class AddProductBundleToCartHandler
+final readonly class AddProductBundleToCartHandler
 {
     public function __construct(
         private OrderRepositoryInterface $orderRepository,
@@ -31,7 +31,6 @@ final class AddProductBundleToCartHandler
         private CartProcessorInterface $cartProcessor,
     ) {
     }
-
     public function __invoke(AddProductBundleToCartCommand $addProductBundleToCartCommand): void
     {
         $cart = $this->orderRepository->findCartById($addProductBundleToCartCommand->getOrderId());

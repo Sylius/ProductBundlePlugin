@@ -19,7 +19,7 @@ use Sylius\Component\Core\Model\ProductInterface;
 use Sylius\Component\Core\Model\ProductVariantInterface;
 use Sylius\ProductBundlePlugin\Entity\OrderItemInterface;
 
-final class OrderItemFactory implements OrderItemFactoryInterface
+final readonly class OrderItemFactory implements OrderItemFactoryInterface
 {
     public function __construct(
         private CartItemFactoryInterface $decoratedFactory,

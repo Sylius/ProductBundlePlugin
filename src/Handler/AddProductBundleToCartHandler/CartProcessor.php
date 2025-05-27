@@ -22,7 +22,7 @@ use Sylius\ProductBundlePlugin\Factory\OrderItemFactoryInterface;
 use Sylius\ProductBundlePlugin\Factory\ProductBundleOrderItemFactoryInterface;
 use Webmozart\Assert\Assert;
 
-final class CartProcessor implements CartProcessorInterface
+final readonly class CartProcessor implements CartProcessorInterface
 {
     public function __construct(
         private OrderItemQuantityModifierInterface $orderItemQuantityModifier,

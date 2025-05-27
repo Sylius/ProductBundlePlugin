@@ -23,7 +23,7 @@ use Webmozart\Assert\Assert;
 final class HasExistingCartValidator extends ConstraintValidator
 {
     public function __construct(
-        private OrderRepositoryInterface $orderRepository,
+        private readonly OrderRepositoryInterface $orderRepository,
     ) {
     }
 
