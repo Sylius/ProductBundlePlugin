@@ -29,7 +29,7 @@ final class ProductBundleOrderItemExtension extends AbstractExtension
     {
         return [
             new TwigFunction(
-                'render_product_bundle_order_items',
+                'sylius_render_product_bundle_order_items',
                 $this->renderProductBundleOrderItems(...),
                 ['is_safe' => ['html']],
             ),
