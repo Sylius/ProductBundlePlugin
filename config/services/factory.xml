@@ -7,31 +7,31 @@
             <argument type="service" id="sylius_product_bundle.factory.product_bundle" />
         </service>
         <service
-                id="sylius_product_bundle.custom_factory.product_bundle_order_item"
-                class="Sylius\ProductBundlePlugin\Factory\ProductBundleOrderItemFactory"
-                decorates="sylius_product_bundle.factory.product_bundle_order_item"
+            id="sylius_product_bundle.custom_factory.product_bundle_order_item"
+            class="Sylius\ProductBundlePlugin\Factory\ProductBundleOrderItemFactory"
+            decorates="sylius_product_bundle.factory.product_bundle_order_item"
         >
-            <argument type="service" id="sylius_product_bundle.custom_factory.product_bundle_order_item.inner" />
+            <argument type="service" id=".inner" />
         </service>
         <service
-                id="sylius_product_bundle.custom_factory.order_item"
-                class="Sylius\ProductBundlePlugin\Factory\OrderItemFactory"
-                decorates="sylius.factory.order_item"
-                decoration-priority="128"
+            id="sylius_product_bundle.custom_factory.order_item"
+            class="Sylius\ProductBundlePlugin\Factory\OrderItemFactory"
+            decorates="sylius.factory.order_item"
+            decoration-priority="128"
         >
-            <argument type="service" id="sylius_product_bundle.custom_factory.order_item.inner" />
+            <argument type="service" id=".inner" />
         </service>
         <service
-                id="sylius_product_bundle.factory.add_product_bundle_item_to_cart_command"
-                class="Sylius\ProductBundlePlugin\Factory\AddProductBundleItemToCartCommandFactory"
+            id="sylius_product_bundle.factory.add_product_bundle_item_to_cart_command"
+            class="Sylius\ProductBundlePlugin\Factory\AddProductBundleItemToCartCommandFactory"
         />
         <service
-                id="sylius_product_bundle.factory.add_product_bundle_to_cart_command"
-                class="Sylius\ProductBundlePlugin\Factory\AddProductBundleToCartCommandFactory"
+            id="sylius_product_bundle.factory.add_product_bundle_to_cart_command"
+            class="Sylius\ProductBundlePlugin\Factory\AddProductBundleToCartCommandFactory"
         />
         <service
-                id="sylius_product_bundle.factory.add_product_bundle_to_cart_dto"
-                class="Sylius\ProductBundlePlugin\Factory\AddProductBundleToCartDtoFactory"
+            id="sylius_product_bundle.factory.add_product_bundle_to_cart_dto"
+            class="Sylius\ProductBundlePlugin\Factory\AddProductBundleToCartDtoFactory"
         >
             <argument type="service" id="sylius_product_bundle.factory.add_product_bundle_item_to_cart_command" />
         </service>

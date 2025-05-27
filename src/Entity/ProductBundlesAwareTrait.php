@@ -13,8 +13,11 @@ declare(strict_types=1);
 
 namespace Sylius\ProductBundlePlugin\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 trait ProductBundlesAwareTrait
 {
+    #[ORM\OneToOne(mappedBy: 'product', targetEntity: ProductBundleInterface::class, cascade: ['all'])]
     protected ?ProductBundleInterface $productBundle = null;
 
     public function getProductBundle(): ?ProductBundleInterface
