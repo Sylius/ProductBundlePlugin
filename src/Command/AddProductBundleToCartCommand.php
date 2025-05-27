@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Sylius\ProductBundlePlugin\Command;
 
-final class AddProductBundleToCartCommand implements OrderIdentityAwareInterface, ProductCodeAwareInterface
+final readonly class AddProductBundleToCartCommand implements OrderIdentityAwareInterface, ProductCodeAwareInterface
 {
     public function __construct(
         private int $orderId,

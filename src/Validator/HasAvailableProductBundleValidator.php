@@ -29,9 +29,9 @@ use Webmozart\Assert\Assert;
 final class HasAvailableProductBundleValidator extends ConstraintValidator
 {
     public function __construct(
-        private ProductRepositoryInterface $productRepository,
-        private OrderRepositoryInterface $orderRepository,
-        private AvailabilityCheckerInterface $availabilityChecker,
+        private readonly ProductRepositoryInterface $productRepository,
+        private readonly OrderRepositoryInterface $orderRepository,
+        private readonly AvailabilityCheckerInterface $availabilityChecker,
     ) {
     }
 

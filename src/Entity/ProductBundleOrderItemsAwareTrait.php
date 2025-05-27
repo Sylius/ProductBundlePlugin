@@ -14,19 +14,20 @@ declare(strict_types=1);
 namespace Sylius\ProductBundlePlugin\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
 trait ProductBundleOrderItemsAwareTrait
 {
-    /** @var ArrayCollection|ProductBundleOrderItemInterface[] */
-    protected $productBundleOrderItems;
+    /** @var ProductBundleOrderItemInterface[]|Collection */
+    protected Collection $productBundleOrderItems;
 
     protected function init(): void
     {
         $this->productBundleOrderItems = new ArrayCollection();
     }
 
-    /** @return ProductBundleOrderItemInterface[]|ArrayCollection */
-    public function getProductBundleOrderItems()
+    /** @return ProductBundleOrderItemInterface[]|Collection */
+    public function getProductBundleOrderItems(): Collection
     {
         return $this->productBundleOrderItems;
     }

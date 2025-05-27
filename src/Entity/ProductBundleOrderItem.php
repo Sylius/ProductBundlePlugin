@@ -20,20 +20,15 @@ class ProductBundleOrderItem implements ProductBundleOrderItemInterface
 {
     use TimestampableTrait;
 
-    /** @var int */
-    protected $id;
+    protected mixed $id = null;
 
-    /** @var OrderItemInterface|null */
-    protected $orderItem;
+    protected ?OrderItemInterface $orderItem;
 
-    /** @var ProductBundleItemInterface|null */
-    protected $productBundleItem;
+    protected ?ProductBundleItemInterface $productBundleItem;
 
-    /** @var ProductVariantInterface|null */
-    protected $productVariant;
+    protected ?ProductVariantInterface $productVariant;
 
-    /** @var int|null */
-    protected $quantity;
+    protected ?int $quantity;
 
     public function getId(): ?int
     {

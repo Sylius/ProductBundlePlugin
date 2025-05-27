@@ -21,7 +21,7 @@ use Sylius\ProductBundlePlugin\Entity\ProductInterface;
 
 final class AddProductBundleToCartDto implements AddProductBundleToCartDtoInterface, ProductCodeAwareInterface
 {
-    private ArrayCollection $productBundleItems;
+    private readonly ArrayCollection $productBundleItems;
 
     public function __construct(
         private OrderInterface $cart,

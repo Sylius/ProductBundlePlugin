@@ -18,10 +18,10 @@ use Sylius\ProductBundlePlugin\Dto\AddProductBundleToCartDtoInterface;
 use Symfony\Component\EventDispatcher\GenericEvent;
 use Webmozart\Assert\Assert;
 
-final class CartItemAddListener
+final readonly class CartItemAddListener
 {
     public function __construct(
-        private readonly OrderModifierInterface $orderModifier,
+        private OrderModifierInterface $orderModifier,
     ) {
     }
 

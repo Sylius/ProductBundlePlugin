@@ -16,6 +16,7 @@ namespace Tests\Sylius\ProductBundlePlugin\Unit\EventListener;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Sylius\Bundle\ResourceBundle\Event\ResourceControllerEvent;
+use Sylius\Component\Core\Model\ProductInterface;
 use Sylius\ProductBundlePlugin\Entity\ProductBundleInterface;
 use Sylius\ProductBundlePlugin\EventListener\AddProductToProductBundleWhenEditNormalProductEventListener;
 use Tests\Sylius\ProductBundlePlugin\Entity\Product;
@@ -38,19 +39,9 @@ final class AddProductToProductBundleWhenEditNormalProductEventListenerTest exte
             ->disableOriginalConstructor()
             ->getMock();
 
-        $event
-            ->expects($this->once())
-            ->method('getSubject')
-            ->willReturn($product);
-
-        $product
-            ->expects($this->once())
-            ->method('getProductBundle')
-            ->willReturn(null);
-
+        $event->expects($this->once())->method('getSubject')->willReturn($product);
+        $product->expects($this->once())->method('getProductBundle')->willReturn(null);
         $this->listener->addProductToProductBundle($event);
-
-        $this->assertTrue(true, 'No exception means pass');
     }
 
     public function testSetsProductOnBundleWhenBundleExistsAndNoProduct(): void
@@ -64,20 +55,9 @@ final class AddProductToProductBundleWhenEditNormalProductEventListenerTest exte
         /** @var ProductBundleInterface|MockObject $bundle */
         $bundle = $this->createMock(ProductBundleInterface::class);
 
-        $event
-            ->expects($this->once())
-            ->method('getSubject')
-            ->willReturn($product);
-
-        $product
-            ->expects($this->once())
-            ->method('getProductBundle')
-            ->willReturn($bundle);
-
-        $bundle
-            ->expects($this->once())
-            ->method('getProduct')
-            ->willReturn(null);
+        $event->expects($this->once())->method('getSubject')->willReturn($product);
+        $product->expects($this->once())->method('getProductBundle')->willReturn($bundle);
+        $bundle->expects($this->once())->method('getProduct')->willReturn(null);
 
         $bundle
             ->expects($this->once())
@@ -95,31 +75,17 @@ final class AddProductToProductBundleWhenEditNormalProductEventListenerTest exte
         $product = $this->getMockBuilder(Product::class)
             ->disableOriginalConstructor()
             ->getMock();
-        /** @var ProductBundleInterface|MockObject $bundle */
+        /** @var ProductBundleInterface&MockObject $bundle */
         $bundle = $this->createMock(ProductBundleInterface::class);
-        /** @var Product|MockObject $existingProduct */
-        $existingProduct = $this->getMockBuilder(Product::class)
+        /** @var ProductInterface|MockObject $existingProduct */
+        $existingProduct = $this->getMockBuilder(ProductInterface::class)
             ->disableOriginalConstructor()
             ->getMock();
 
-        $event
-            ->expects($this->once())
-            ->method('getSubject')
-            ->willReturn($product);
-
-        $product
-            ->expects($this->once())
-            ->method('getProductBundle')
-            ->willReturn($bundle);
-
-        $bundle
-            ->expects($this->once())
-            ->method('getProduct')
-            ->willReturn($existingProduct);
-
-        $bundle
-            ->expects($this->never())
-            ->method('setProduct');
+        $event->expects($this->once())->method('getSubject')->willReturn($product);
+        $product->expects($this->once())->method('getProductBundle')->willReturn($bundle);
+        $bundle->expects($this->once())->method('getProduct')->willReturn($existingProduct);
+        $bundle->expects($this->never())->method('setProduct');
 
         $this->listener->addProductToProductBundle($event);
     }

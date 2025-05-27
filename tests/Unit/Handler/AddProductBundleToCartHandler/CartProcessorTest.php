@@ -35,6 +35,7 @@ use Sylius\ProductBundlePlugin\Handler\AddProductBundleToCartHandler\CartProcess
 use Sylius\ProductBundlePlugin\Handler\AddProductBundleToCartHandler\CartProcessorInterface;
 use Tests\Sylius\ProductBundlePlugin\Entity\OrderItem;
 use Tests\Sylius\ProductBundlePlugin\Entity\Product;
+use Webmozart\Assert\Assert;
 use Webmozart\Assert\InvalidArgumentException;
 
 final class CartProcessorTest extends TestCase
@@ -144,20 +145,33 @@ final class CartProcessorTest extends TestCase
         $productBundle->addProductBundleItem($bundleItem2);
 
         $cartItem = $this->createMock(OrderItemInterface::class);
+
+        $expectedBundleItems = [[$productBundleOrderItem1], [$productBundleOrderItem2]];
+        $callIndex = 0;
+
         $cartItem->expects(self::exactly(2))
             ->method('addProductBundleOrderItem')
-            ->withConsecutive([$productBundleOrderItem1], [$productBundleOrderItem2])
-        ;
+            ->willReturnCallback(function (...$args) use (&$callIndex, $expectedBundleItems) {
+                Assert::same($expectedBundleItems[$callIndex], $args);
+                ++$callIndex;
+            });
 
         $this->cartItemFactory
             ->method('createWithVariant')
-            ->willReturn($cartItem)
-        ;
-        $this->productBundleOrderItemFactory->expects(self::exactly(2))
+            ->willReturn($cartItem);
+
+        $expectedFactoryArgs = [[$bundleItem1], [$bundleItem2]];
+        $returnValues = [$productBundleOrderItem1, $productBundleOrderItem2];
+        $factoryCallIndex = 0;
+
+        $this->productBundleOrderItemFactory
+            ->expects(self::exactly(2))
             ->method('createFromProductBundleItem')
-            ->withConsecutive([$bundleItem1], [$bundleItem2])
-            ->willReturn($productBundleOrderItem1, $productBundleOrderItem2)
-        ;
+            ->willReturnCallback(function (...$args) use (&$factoryCallIndex, $expectedFactoryArgs, $returnValues) {
+                Assert::same($expectedFactoryArgs[$factoryCallIndex], $args);
+
+                return $returnValues[$factoryCallIndex++];
+            });
 
         $processor = $this->createProcessor();
         $processor->process($cart, $productBundle, 1);

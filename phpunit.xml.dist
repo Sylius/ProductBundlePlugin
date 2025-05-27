@@ -17,10 +17,7 @@
 
     <php>
         <ini name="error_reporting" value="-1" />
-
         <server name="IS_DOCTRINE_ORM_SUPPORTED" value="true" />
-        <server name="ESCAPE_JSON" value="true" />
-
         <env name="APP_ENV" value="test"/>
         <env name="SHELL_VERBOSITY" value="-1" />
     </php>

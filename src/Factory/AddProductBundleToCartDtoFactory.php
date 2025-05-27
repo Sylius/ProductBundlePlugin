@@ -21,7 +21,7 @@ use Sylius\ProductBundlePlugin\Entity\OrderItemInterface;
 use Sylius\ProductBundlePlugin\Entity\ProductBundleInterface;
 use Sylius\ProductBundlePlugin\Entity\ProductInterface;
 
-final class AddProductBundleToCartDtoFactory implements AddProductBundleToCartDtoFactoryInterface
+final readonly class AddProductBundleToCartDtoFactory implements AddProductBundleToCartDtoFactoryInterface
 {
     public function __construct(
         private AddProductBundleItemToCartCommandFactoryInterface $addProductBundleItemToCartCommandFactory,

@@ -19,7 +19,7 @@ use Sylius\ProductBundlePlugin\Entity\ProductBundleItemInterface;
 final class AddProductBundleItemToCartCommand
 {
     public function __construct(
-        private ProductBundleItemInterface $productBundleItem,
+        private readonly ProductBundleItemInterface $productBundleItem,
         private ?ProductVariantInterface $productVariant = null,
         private ?int $quantity = null,
     ) {

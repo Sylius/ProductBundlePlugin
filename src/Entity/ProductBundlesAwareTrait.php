@@ -15,8 +15,7 @@ namespace Sylius\ProductBundlePlugin\Entity;
 
 trait ProductBundlesAwareTrait
 {
-    /** @var ProductBundleInterface */
-    protected $productBundle;
+    protected ?ProductBundleInterface $productBundle = null;
 
     public function getProductBundle(): ?ProductBundleInterface
     {

@@ -86,7 +86,7 @@ final class AddProductBundleToCartHandlerTest extends TestCase
         $handler($command);
     }
 
-    public function pessimisticDataProvider(): array
+    public static function pessimisticDataProvider(): array
     {
         $productBundle = ProductBundleMother::create();
         $productWithBundle = ProductMother::createWithBundle($productBundle);
