@@ -11,15 +11,15 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusProductBundlePlugin\Handler\Api;
+namespace Sylius\ProductBundlePlugin\Handler\Api;
 
-use BitBag\SyliusProductBundlePlugin\Dto\Api\AddProductBundleToCartDto;
-use BitBag\SyliusProductBundlePlugin\Entity\ProductBundleInterface;
-use BitBag\SyliusProductBundlePlugin\Entity\ProductInterface;
-use BitBag\SyliusProductBundlePlugin\Handler\AddProductBundleToCartHandler\CartProcessorInterface;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Repository\OrderRepositoryInterface;
 use Sylius\Component\Core\Repository\ProductRepositoryInterface;
+use Sylius\ProductBundlePlugin\Dto\Api\AddProductBundleToCartDto;
+use Sylius\ProductBundlePlugin\Entity\ProductBundleInterface;
+use Sylius\ProductBundlePlugin\Entity\ProductInterface;
+use Sylius\ProductBundlePlugin\Handler\AddProductBundleToCartHandler\CartProcessorInterface;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 use Webmozart\Assert\Assert;
 

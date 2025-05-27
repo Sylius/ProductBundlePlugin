@@ -3,7 +3,7 @@
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
                   xmlns:gedmo="http://gediminasm.org/schemas/orm/doctrine-extensions-mapping">
 
-    <mapped-superclass name="BitBag\SyliusProductBundlePlugin\Entity\ProductBundle" table="bitbag_product_bundle">
+    <mapped-superclass name="Sylius\ProductBundlePlugin\Entity\ProductBundle" table="bitbag_product_bundle">
         <id name="id" type="integer">
             <generator strategy="AUTO"/>
         </id>
@@ -25,7 +25,7 @@
             <join-column name="product_id" referenced-column-name="id" nullable="false"/>
         </one-to-one>
 
-        <one-to-many field="productBundleItems" target-entity="BitBag\SyliusProductBundlePlugin\Entity\ProductBundleItemInterface" mapped-by="productBundle" orphan-removal="true">
+        <one-to-many field="productBundleItems" target-entity="Sylius\ProductBundlePlugin\Entity\ProductBundleItemInterface" mapped-by="productBundle" orphan-removal="true">
             <cascade>
                 <cascade-all />
             </cascade>

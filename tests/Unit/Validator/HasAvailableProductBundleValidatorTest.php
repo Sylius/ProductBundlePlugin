@@ -11,22 +11,22 @@
 
 declare(strict_types=1);
 
-namespace Tests\BitBag\SyliusProductBundlePlugin\Unit\Validator;
+namespace Tests\Sylius\ProductBundlePlugin\Unit\Validator;
 
-use BitBag\SyliusProductBundlePlugin\Command\AddProductBundleToCartCommand;
-use BitBag\SyliusProductBundlePlugin\Entity\ProductInterface;
-use BitBag\SyliusProductBundlePlugin\Validator\HasAvailableProductBundle;
-use BitBag\SyliusProductBundlePlugin\Validator\HasAvailableProductBundleValidator;
 use PHPUnit\Framework\MockObject\MockObject;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Repository\OrderRepositoryInterface;
 use Sylius\Component\Core\Repository\ProductRepositoryInterface;
 use Sylius\Component\Inventory\Checker\AvailabilityCheckerInterface;
+use Sylius\ProductBundlePlugin\Command\AddProductBundleToCartCommand;
+use Sylius\ProductBundlePlugin\Entity\ProductInterface;
+use Sylius\ProductBundlePlugin\Validator\HasAvailableProductBundle;
+use Sylius\ProductBundlePlugin\Validator\HasAvailableProductBundleValidator;
 use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
-use Tests\BitBag\SyliusProductBundlePlugin\Unit\MotherObject\ChannelMother;
-use Tests\BitBag\SyliusProductBundlePlugin\Unit\MotherObject\OrderMother;
-use Tests\BitBag\SyliusProductBundlePlugin\Unit\MotherObject\ProductMother;
-use Tests\BitBag\SyliusProductBundlePlugin\Unit\MotherObject\ProductVariantMother;
+use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\ChannelMother;
+use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\OrderMother;
+use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\ProductMother;
+use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\ProductVariantMother;
 
 final class HasAvailableProductBundleValidatorTest extends ConstraintValidatorTestCase
 {

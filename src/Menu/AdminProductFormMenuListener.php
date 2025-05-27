@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusProductBundlePlugin\Menu;
+namespace Sylius\ProductBundlePlugin\Menu;
 
 use Sylius\Bundle\AdminBundle\Event\ProductMenuBuilderEvent;
 
@@ -23,8 +23,8 @@ final class AdminProductFormMenuListener
 
         $menu
             ->addChild('bundle')
-            ->setAttribute('template', '@BitBagSyliusProductBundlePlugin/Admin/product/form/side_navigation/bundle.html.twig')
-            ->setLabel('bitbag_sylius_product_bundle.ui.bundle')
+            ->setAttribute('template', '@SyliusProductBundlePlugin/Admin/product/form/side_navigation/bundle.html.twig')
+            ->setLabel('sylius_product_bundle.ui.bundle')
         ;
     }
 }

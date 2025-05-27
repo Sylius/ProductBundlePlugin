@@ -11,9 +11,9 @@
 
 declare(strict_types=1);
 
-namespace Tests\BitBag\SyliusProductBundlePlugin\Unit\MotherObject;
+namespace Tests\Sylius\ProductBundlePlugin\Unit\MotherObject;
 
-use BitBag\SyliusProductBundlePlugin\Dto\AddProductBundleToCartDto;
+use Sylius\ProductBundlePlugin\Dto\AddProductBundleToCartDto;
 
 final class AddProductBundleToCartDtoMother
 {

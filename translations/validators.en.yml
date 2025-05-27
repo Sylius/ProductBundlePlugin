@@ -1,4 +1,4 @@
-bitbag_sylius_product_bundle:
+sylius_product_bundle:
     add_to_cart:
         no_order_id_or_token: "Neither order's ID nor order's token provided."
         cart_doesnt_exist: "Cart does not exist."

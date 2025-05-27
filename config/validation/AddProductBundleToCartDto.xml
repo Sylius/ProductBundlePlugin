@@ -11,7 +11,7 @@
                     xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping
         https://symfony.com/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd">
 
-    <class name="BitBag\SyliusProductBundlePlugin\Dto\AddProductBundleToCartDto">
-        <constraint name="BitBag\SyliusProductBundlePlugin\Validator\HasProductBundle" />
+    <class name="Sylius\ProductBundlePlugin\Dto\AddProductBundleToCartDto">
+        <constraint name="Sylius\ProductBundlePlugin\Validator\HasProductBundle" />
     </class>
 </constraint-mapping>

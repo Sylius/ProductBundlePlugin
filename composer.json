@@ -1,5 +1,5 @@
 {
-    "name": "bitbag/product-bundle-plugin",
+    "name": "sylius/product-bundle-plugin",
     "type": "sylius-plugin",
     "keywords": ["sylius", "sylius-plugin"],
     "description": "Product bundle for Sylius.",
@@ -41,16 +41,15 @@
     },
     "autoload": {
         "psr-4": {
-            "BitBag\\SyliusProductBundlePlugin\\": "src/"
+            "Sylius\\ProductBundlePlugin\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\BitBag\\SyliusProductBundlePlugin\\": [
+            "Tests\\Sylius\\ProductBundlePlugin\\": [
                 "tests/",
                 "tests/Application/src"
-            ],
-            "spec\\BitBag\\SyliusProductBundlePlugin\\": "spec/"
+            ]
         },
         "classmap": ["tests/Application/Kernel.php"]
     },

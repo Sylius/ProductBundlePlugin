@@ -9,7 +9,7 @@ parameters:
         - 'tests/Application/**.php'
 
     ignoreErrors:
-        - '/Parameter #1 \$productRepository of method BitBag\\SyliusProductBundlePlugin\\Component\\Product\\AddToCartFormComponent::initializeProduct\(\) expects Sylius\\Component\\Core\\Repository\\ProductRepositoryInterface<Sylius\\Component\\Core\\Model\\ProductInterface>, Sylius\\Component\\Core\\Repository\\ProductRepositoryInterface<BitBag\\SyliusProductBundlePlugin\\Entity\\ProductInterface> given\./'
-        - '/Parameter #10 \$productRepository of method Sylius\\Bundle\\ShopBundle\\Twig\\Component\\Product\\AddToCartFormComponent::__construct\(\) expects Sylius\\Component\\Core\\Repository\\ProductRepositoryInterface\<Sylius\\Component\\Core\\Model\\ProductInterface\>, Sylius\\Component\\Core\\Repository\\ProductRepositoryInterface\<BitBag\\SyliusProductBundlePlugin\\Entity\\ProductInterface\> given\./'
+        - '/Parameter #1 \$productRepository of method Sylius\\ProductBundlePlugin\\Component\\Product\\AddToCartFormComponent::initializeProduct\(\) expects Sylius\\Component\\Core\\Repository\\ProductRepositoryInterface<Sylius\\Component\\Core\\Model\\ProductInterface>, Sylius\\Component\\Core\\Repository\\ProductRepositoryInterface<Sylius\\ProductBundlePlugin\\Entity\\ProductInterface> given\./'
+        - '/Parameter #10 \$productRepository of method Sylius\\Bundle\\ShopBundle\\Twig\\Component\\Product\\AddToCartFormComponent::__construct\(\) expects Sylius\\Component\\Core\\Repository\\ProductRepositoryInterface\<Sylius\\Component\\Core\\Model\\ProductInterface\>, Sylius\\Component\\Core\\Repository\\ProductRepositoryInterface\<Sylius\\ProductBundlePlugin\\Entity\\ProductInterface\> given\./'
         - identifier: missingType.iterableValue
         - identifier: missingType.generics

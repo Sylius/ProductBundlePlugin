@@ -11,7 +11,7 @@
                     xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping
         https://symfony.com/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd">
 
-    <class name="BitBag\SyliusProductBundlePlugin\Entity\ProductBundle">
+    <class name="Sylius\ProductBundlePlugin\Entity\ProductBundle">
         <property name="productBundleItems">
             <constraint name="Valid"/>
         </property>

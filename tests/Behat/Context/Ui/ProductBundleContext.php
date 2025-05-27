@@ -11,11 +11,11 @@
 
 declare(strict_types=1);
 
-namespace Tests\BitBag\SyliusProductBundlePlugin\Behat\Context\Ui;
+namespace Tests\Sylius\ProductBundlePlugin\Behat\Context\Ui;
 
 use Behat\Behat\Context\Context;
 use Sylius\Component\Core\Model\ChannelInterface;
-use Tests\BitBag\SyliusProductBundlePlugin\Behat\Page\Admin\CreateBundledProductPageInterface;
+use Tests\Sylius\ProductBundlePlugin\Behat\Page\Admin\CreateBundledProductPageInterface;
 
 class ProductBundleContext implements Context
 {

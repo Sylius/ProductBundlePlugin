@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusProductBundlePlugin\Form\Type;
+namespace Sylius\ProductBundlePlugin\Form\Type;
 
 use Sylius\Bundle\AdminBundle\Form\Type\ProductVariantAutocompleteType;
 use Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType;
@@ -35,6 +35,6 @@ final class ProductBundleItemType extends AbstractResourceType
 
     public function getBlockPrefix(): string
     {
-        return 'bitbag_sylius_product_bundle_plugin_product_bundle_item';
+        return 'sylius_product_bundle_plugin_product_bundle_item';
     }
 }

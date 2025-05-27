@@ -11,11 +11,8 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusProductBundlePlugin\Component\Product;
+namespace Sylius\ProductBundlePlugin\Component\Product;
 
-use BitBag\SyliusProductBundlePlugin\Entity\OrderItemInterface;
-use BitBag\SyliusProductBundlePlugin\Entity\ProductInterface;
-use BitBag\SyliusProductBundlePlugin\Factory\AddProductBundleToCartDtoFactoryInterface;
 use Doctrine\Persistence\ObjectManager;
 use Sylius\Bundle\CoreBundle\Provider\FlashBagProvider;
 use Sylius\Bundle\OrderBundle\Factory\AddToCartCommandFactory;
@@ -30,6 +27,9 @@ use Sylius\Component\Core\Repository\ProductRepositoryInterface;
 use Sylius\Component\Core\Repository\ProductVariantRepositoryInterface;
 use Sylius\Component\Order\Context\CartContextInterface;
 use Sylius\Component\Order\SyliusCartEvents;
+use Sylius\ProductBundlePlugin\Entity\OrderItemInterface;
+use Sylius\ProductBundlePlugin\Entity\ProductInterface;
+use Sylius\ProductBundlePlugin\Factory\AddProductBundleToCartDtoFactoryInterface;
 use Sylius\TwigHooks\LiveComponent\HookableLiveComponentTrait;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\EventDispatcher\GenericEvent;

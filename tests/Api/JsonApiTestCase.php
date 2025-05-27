@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\BitBag\SyliusProductBundlePlugin\Api;
+namespace Tests\Sylius\ProductBundlePlugin\Api;
 
 use ApiTestCase\JsonApiTestCase as BaseJsonApiTestCase;
 use Symfony\Component\DependencyInjection\Container;

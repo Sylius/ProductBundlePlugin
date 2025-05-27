@@ -15,7 +15,7 @@ bitbag_product_bundle_admin_product_create_bundle:
                 options:
                     validation_groups:
                         - sylius
-                        - bitbag_sylius_product_bundle
+                        - sylius_product_bundle
             vars:
                 subheader: sylius.ui.manage_your_product_catalog
                 templates:

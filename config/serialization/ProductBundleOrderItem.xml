@@ -10,7 +10,7 @@
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xsi:schemaLocation="http://symfony.com/schema/dic/serializer-mapping https://symfony.com/schema/dic/serializer-mapping/serializer-mapping-1.0.xsd"
 >
-    <class name="BitBag\SyliusProductBundlePlugin\Entity\ProductBundleOrderItem">
+    <class name="Sylius\ProductBundlePlugin\Entity\ProductBundleOrderItem">
         <attribute name="id">
             <group>admin:order:read</group>
             <group>admin:order_item:read</group>

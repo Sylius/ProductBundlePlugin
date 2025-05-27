@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusProductBundlePlugin\Entity;
+namespace Sylius\ProductBundlePlugin\Entity;
 
 interface ProductBundlesAwareInterface
 {

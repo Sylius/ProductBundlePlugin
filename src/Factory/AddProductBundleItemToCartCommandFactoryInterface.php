@@ -11,10 +11,10 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusProductBundlePlugin\Factory;
+namespace Sylius\ProductBundlePlugin\Factory;
 
-use BitBag\SyliusProductBundlePlugin\Command\AddProductBundleItemToCartCommand;
-use BitBag\SyliusProductBundlePlugin\Entity\ProductBundleItemInterface;
+use Sylius\ProductBundlePlugin\Command\AddProductBundleItemToCartCommand;
+use Sylius\ProductBundlePlugin\Entity\ProductBundleItemInterface;
 
 interface AddProductBundleItemToCartCommandFactoryInterface
 {

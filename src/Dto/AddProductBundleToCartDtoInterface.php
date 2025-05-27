@@ -11,12 +11,12 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusProductBundlePlugin\Dto;
+namespace Sylius\ProductBundlePlugin\Dto;
 
-use BitBag\SyliusProductBundlePlugin\Entity\ProductInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Sylius\Component\Order\Model\OrderInterface;
 use Sylius\Component\Order\Model\OrderItemInterface;
+use Sylius\ProductBundlePlugin\Entity\ProductInterface;
 
 interface AddProductBundleToCartDtoInterface
 {

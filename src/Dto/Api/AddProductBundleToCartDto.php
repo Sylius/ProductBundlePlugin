@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusProductBundlePlugin\Dto\Api;
+namespace Sylius\ProductBundlePlugin\Dto\Api;
 
 use Sylius\Bundle\ApiBundle\Attribute\OrderTokenValueAware;
 use Sylius\Bundle\ApiBundle\Command\IriToIdentifierConversionAwareInterface;

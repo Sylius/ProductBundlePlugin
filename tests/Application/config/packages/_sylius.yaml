@@ -15,16 +15,16 @@ sylius_product:
     resources:
         product:
             classes:
-                model: Tests\BitBag\SyliusProductBundlePlugin\Entity\Product
+                model: Tests\Sylius\ProductBundlePlugin\Entity\Product
         product_variant:
             classes:
-                repository: BitBag\SyliusProductBundlePlugin\Repository\ProductVariantRepository
+                repository: Sylius\ProductBundlePlugin\Repository\ProductVariantRepository
 
 sylius_order:
     resources:
         order_item:
             classes:
-                model: Tests\BitBag\SyliusProductBundlePlugin\Entity\OrderItem
+                model: Tests\Sylius\ProductBundlePlugin\Entity\OrderItem
 
 sylius_shop:
     product_grid:
@@ -52,5 +52,5 @@ sylius_grid:
                                     label: sylius.ui.configurable_product
                                     route: sylius_admin_product_create
                                 bundle:
-                                    label: bitbag_sylius_product_bundle.ui.bundle
+                                    label: sylius_product_bundle.ui.bundle
                                     route: bitbag_product_bundle_admin_product_create_bundle

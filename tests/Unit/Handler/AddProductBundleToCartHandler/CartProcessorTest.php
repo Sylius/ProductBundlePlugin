@@ -11,20 +11,8 @@
 
 declare(strict_types=1);
 
-namespace Tests\BitBag\SyliusProductBundlePlugin\Unit\Handler\AddProductBundleToCartHandler;
+namespace Tests\Sylius\ProductBundlePlugin\Unit\Handler\AddProductBundleToCartHandler;
 
-use BitBag\SyliusProductBundlePlugin\Entity\OrderItemInterface;
-use BitBag\SyliusProductBundlePlugin\Entity\ProductBundle;
-use BitBag\SyliusProductBundlePlugin\Entity\ProductBundleInterface;
-use BitBag\SyliusProductBundlePlugin\Entity\ProductBundleItem;
-use BitBag\SyliusProductBundlePlugin\Entity\ProductBundleItemInterface;
-use BitBag\SyliusProductBundlePlugin\Entity\ProductBundleOrderItem;
-use BitBag\SyliusProductBundlePlugin\Entity\ProductBundleOrderItemInterface;
-use BitBag\SyliusProductBundlePlugin\Entity\ProductInterface;
-use BitBag\SyliusProductBundlePlugin\Factory\OrderItemFactoryInterface;
-use BitBag\SyliusProductBundlePlugin\Factory\ProductBundleOrderItemFactoryInterface;
-use BitBag\SyliusProductBundlePlugin\Handler\AddProductBundleToCartHandler\CartProcessor;
-use BitBag\SyliusProductBundlePlugin\Handler\AddProductBundleToCartHandler\CartProcessorInterface;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Sylius\Component\Core\Model\ProductVariant;
@@ -33,8 +21,20 @@ use Sylius\Component\Order\Model\OrderInterface;
 use Sylius\Component\Order\Modifier\OrderItemQuantityModifierInterface;
 use Sylius\Component\Order\Modifier\OrderModifierInterface;
 use Sylius\Component\Product\Model\ProductVariantInterface;
-use Tests\BitBag\SyliusProductBundlePlugin\Entity\OrderItem;
-use Tests\BitBag\SyliusProductBundlePlugin\Entity\Product;
+use Sylius\ProductBundlePlugin\Entity\OrderItemInterface;
+use Sylius\ProductBundlePlugin\Entity\ProductBundle;
+use Sylius\ProductBundlePlugin\Entity\ProductBundleInterface;
+use Sylius\ProductBundlePlugin\Entity\ProductBundleItem;
+use Sylius\ProductBundlePlugin\Entity\ProductBundleItemInterface;
+use Sylius\ProductBundlePlugin\Entity\ProductBundleOrderItem;
+use Sylius\ProductBundlePlugin\Entity\ProductBundleOrderItemInterface;
+use Sylius\ProductBundlePlugin\Entity\ProductInterface;
+use Sylius\ProductBundlePlugin\Factory\OrderItemFactoryInterface;
+use Sylius\ProductBundlePlugin\Factory\ProductBundleOrderItemFactoryInterface;
+use Sylius\ProductBundlePlugin\Handler\AddProductBundleToCartHandler\CartProcessor;
+use Sylius\ProductBundlePlugin\Handler\AddProductBundleToCartHandler\CartProcessorInterface;
+use Tests\Sylius\ProductBundlePlugin\Entity\OrderItem;
+use Tests\Sylius\ProductBundlePlugin\Entity\Product;
 use Webmozart\Assert\InvalidArgumentException;
 
 final class CartProcessorTest extends TestCase

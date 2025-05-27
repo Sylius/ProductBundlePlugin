@@ -11,12 +11,12 @@
 
 declare(strict_types=1);
 
-namespace Tests\BitBag\SyliusProductBundlePlugin\Unit\Factory;
+namespace Tests\Sylius\ProductBundlePlugin\Unit\Factory;
 
-use BitBag\SyliusProductBundlePlugin\Command\AddProductBundleToCartCommand;
-use BitBag\SyliusProductBundlePlugin\Factory\AddProductBundleToCartCommandFactory;
 use PHPUnit\Framework\TestCase;
-use Tests\BitBag\SyliusProductBundlePlugin\Unit\MotherObject\AddProductBundleToCartDtoMother;
+use Sylius\ProductBundlePlugin\Command\AddProductBundleToCartCommand;
+use Sylius\ProductBundlePlugin\Factory\AddProductBundleToCartCommandFactory;
+use Tests\Sylius\ProductBundlePlugin\Unit\MotherObject\AddProductBundleToCartDtoMother;
 
 final class AddProductBundleToCartCommandFactoryTest extends TestCase
 {

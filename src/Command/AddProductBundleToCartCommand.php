@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusProductBundlePlugin\Command;
+namespace Sylius\ProductBundlePlugin\Command;
 
 final class AddProductBundleToCartCommand implements OrderIdentityAwareInterface, ProductCodeAwareInterface
 {

@@ -11,10 +11,10 @@
 
 declare(strict_types=1);
 
-namespace Tests\BitBag\SyliusProductBundlePlugin\Unit\MotherObject;
+namespace Tests\Sylius\ProductBundlePlugin\Unit\MotherObject;
 
-use BitBag\SyliusProductBundlePlugin\Entity\OrderItemInterface;
-use Tests\BitBag\SyliusProductBundlePlugin\Entity\OrderItem;
+use Sylius\ProductBundlePlugin\Entity\OrderItemInterface;
+use Tests\Sylius\ProductBundlePlugin\Entity\OrderItem;
 
 final class OrderItemMother
 {

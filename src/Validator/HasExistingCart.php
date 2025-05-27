@@ -11,17 +11,17 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusProductBundlePlugin\Validator;
+namespace Sylius\ProductBundlePlugin\Validator;
 
 use Symfony\Component\Validator\Constraint;
 
 final class HasExistingCart extends Constraint
 {
-    public const CART_DOESNT_EXIST_MESSAGE = 'bitbag_sylius_product_bundle.add_to_cart.cart_doesnt_exist';
+    public const CART_DOESNT_EXIST_MESSAGE = 'sylius_product_bundle.add_to_cart.cart_doesnt_exist';
 
     public function validatedBy(): string
     {
-        return 'bitbag_sylius_product_bundle_validator_has_existing_cart';
+        return 'sylius_product_bundle_validator_has_existing_cart';
     }
 
     public function getTargets(): array|string

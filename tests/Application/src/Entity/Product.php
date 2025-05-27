@@ -9,10 +9,10 @@
 
 declare(strict_types=1);
 
-namespace Tests\BitBag\SyliusProductBundlePlugin\Entity;
+namespace Tests\Sylius\ProductBundlePlugin\Entity;
 
-use BitBag\SyliusProductBundlePlugin\Entity\ProductBundlesAwareTrait;
-use BitBag\SyliusProductBundlePlugin\Entity\ProductInterface;
+use Sylius\ProductBundlePlugin\Entity\ProductBundlesAwareTrait;
+use Sylius\ProductBundlePlugin\Entity\ProductInterface;
 use Sylius\Component\Core\Model\Product as BaseProduct;
 
 class Product extends BaseProduct implements ProductInterface

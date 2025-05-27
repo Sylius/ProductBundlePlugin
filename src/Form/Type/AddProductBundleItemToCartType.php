@@ -11,14 +11,14 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusProductBundlePlugin\Form\Type;
+namespace Sylius\ProductBundlePlugin\Form\Type;
 
-use BitBag\SyliusProductBundlePlugin\Command\AddProductBundleItemToCartCommand;
-use BitBag\SyliusProductBundlePlugin\Entity\ProductInterface;
 use Sylius\Bundle\ProductBundle\Form\Type\ProductVariantChoiceType;
 use Sylius\Bundle\ProductBundle\Form\Type\ProductVariantMatchType;
 use Sylius\Component\Core\Model\Product;
 use Sylius\Component\Core\Model\ProductVariantInterface;
+use Sylius\ProductBundlePlugin\Command\AddProductBundleItemToCartCommand;
+use Sylius\ProductBundlePlugin\Entity\ProductInterface;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
@@ -80,6 +80,6 @@ final class AddProductBundleItemToCartType extends AbstractType
 
     public function getBlockPrefix(): string
     {
-        return 'bitbag_sylius_product_bundle_plugin_add_product_bundle_item_to_cart';
+        return 'sylius_product_bundle_plugin_add_product_bundle_item_to_cart';
     }
 }

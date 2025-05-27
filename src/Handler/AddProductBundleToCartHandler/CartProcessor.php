@@ -11,15 +11,15 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusProductBundlePlugin\Handler\AddProductBundleToCartHandler;
+namespace Sylius\ProductBundlePlugin\Handler\AddProductBundleToCartHandler;
 
-use BitBag\SyliusProductBundlePlugin\Entity\ProductBundleInterface;
-use BitBag\SyliusProductBundlePlugin\Factory\OrderItemFactoryInterface;
-use BitBag\SyliusProductBundlePlugin\Factory\ProductBundleOrderItemFactoryInterface;
 use Sylius\Component\Core\Model\ProductVariantInterface;
 use Sylius\Component\Order\Model\OrderInterface;
 use Sylius\Component\Order\Modifier\OrderItemQuantityModifierInterface;
 use Sylius\Component\Order\Modifier\OrderModifierInterface;
+use Sylius\ProductBundlePlugin\Entity\ProductBundleInterface;
+use Sylius\ProductBundlePlugin\Factory\OrderItemFactoryInterface;
+use Sylius\ProductBundlePlugin\Factory\ProductBundleOrderItemFactoryInterface;
 use Webmozart\Assert\Assert;
 
 final class CartProcessor implements CartProcessorInterface

@@ -3,7 +3,7 @@
 {% if product.isBundle %}
     {% set product_bundle_items = form.productBundleItems %}
     <div id="sylius-product-selecting-variant">
-        <h4 class="mt-4">{{ 'bitbag_sylius_product_bundle.ui.products_in_bundle'|trans }}</h4>
+        <h4 class="mt-4">{{ 'sylius_product_bundle.ui.products_in_bundle'|trans }}</h4>
         {% for item in product_bundle_items %}
             {% set data = item.vars.data %}
             <div class="card">

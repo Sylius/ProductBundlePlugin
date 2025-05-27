@@ -11,9 +11,9 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusProductBundlePlugin\Twig\Extension;
+namespace Sylius\ProductBundlePlugin\Twig\Extension;
 
-use BitBag\SyliusProductBundlePlugin\Entity\ProductInterface;
+use Sylius\ProductBundlePlugin\Entity\ProductInterface;
 use Twig\Environment;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
@@ -29,7 +29,7 @@ final class ProductBundleOrderItemExtension extends AbstractExtension
     {
         return [
             new TwigFunction(
-                'bitbag_render_product_bundle_order_items',
+                'render_product_bundle_order_items',
                 [$this, 'renderProductBundleOrderItems'],
                 ['is_safe' => ['html']],
             ),
@@ -50,7 +50,7 @@ final class ProductBundleOrderItemExtension extends AbstractExtension
 
         $items = $productBundle->getProductBundleItems();
 
-        return $this->twig->render('@BitBagSyliusProductBundlePlugin/Admin/Order/Show/_productBundleOrderItems.html.twig', [
+        return $this->twig->render('@SyliusProductBundlePlugin/Admin/Order/Show/_productBundleOrderItems.html.twig', [
             'items' => $items,
         ]);
     }

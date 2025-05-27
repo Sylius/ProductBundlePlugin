@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusProductBundlePlugin\Factory;
+namespace Sylius\ProductBundlePlugin\Factory;
 
 use Sylius\Component\Product\Factory\ProductFactoryInterface as BaseProductFactoryInterface;
 use Sylius\Component\Product\Model\ProductInterface;

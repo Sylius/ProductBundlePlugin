@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\BitBag\SyliusProductBundlePlugin\Api\Utils;
+namespace Tests\Sylius\ProductBundlePlugin\Api\Utils;
 
 use Sylius\Bundle\ApiBundle\Command\Cart\PickupCart;
 use Sylius\Component\Core\Repository\OrderRepositoryInterface;

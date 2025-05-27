@@ -1,6 +1,6 @@
 {% from '@SyliusAdmin/shared/helper/product_image.html.twig' import image %}
 
-<h2 class="mt-2">{{ 'bitbag_sylius_product_bundle.ui.products_in_bundle'|trans }}</h2>
+<h2 class="mt-2">{{ 'sylius_product_bundle.ui.products_in_bundle'|trans }}</h2>
 
 {% for item in items %}
     {% set variant = item.productVariant %}
@@ -14,7 +14,7 @@
                 <a>x {{ item.quantity }}</a>
             </div>
             <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{ loop.index }}">
-                {{ 'bitbag_sylius_product_bundle.ui.details'|trans }}
+                {{ 'sylius_product_bundle.ui.details'|trans }}
             </button>
         </div>
         <div id="collapse-{{ loop.index }}" class="collapse">
@@ -39,7 +39,7 @@
                             </div>
                         {% endif %}
                         <div class="text-muted small sylius-product-quantity">
-                            {{ 'bitbag_sylius_product_bundle.ui.quantity'|trans }}: {{ item.quantity }}
+                            {{ 'sylius_product_bundle.ui.quantity'|trans }}: {{ item.quantity }}
                         </div>
                     </div>
                 </div>

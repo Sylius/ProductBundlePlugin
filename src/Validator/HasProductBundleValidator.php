@@ -11,11 +11,11 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusProductBundlePlugin\Validator;
+namespace Sylius\ProductBundlePlugin\Validator;
 
-use BitBag\SyliusProductBundlePlugin\Command\ProductCodeAwareInterface;
-use BitBag\SyliusProductBundlePlugin\Entity\ProductInterface;
 use Sylius\Component\Core\Repository\ProductRepositoryInterface;
+use Sylius\ProductBundlePlugin\Command\ProductCodeAwareInterface;
+use Sylius\ProductBundlePlugin\Entity\ProductInterface;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedValueException;

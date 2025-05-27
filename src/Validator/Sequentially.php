@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusProductBundlePlugin\Validator;
+namespace Sylius\ProductBundlePlugin\Validator;
 
 use Symfony\Component\Validator\Constraints\Composite;
 
@@ -44,6 +44,6 @@ final class Sequentially extends Composite
 
     public function validatedBy(): string
     {
-        return 'bitbag_sylius_product_bundle_validator_sequentially';
+        return 'sylius_product_bundle_validator_sequentially';
     }
 }
