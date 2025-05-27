@@ -22,11 +22,11 @@ class ProductBundleItem implements ProductBundleItemInterface
 
     protected mixed $id = null;
 
-    protected ?ProductVariantInterface $productVariant;
+    protected ?ProductVariantInterface $productVariant = null;
 
-    protected ?int $quantity;
+    protected ?int $quantity = null;
 
-    protected ?ProductBundleInterface $productBundle;
+    protected ?ProductBundleInterface $productBundle = null;
 
     public function __construct()
     {

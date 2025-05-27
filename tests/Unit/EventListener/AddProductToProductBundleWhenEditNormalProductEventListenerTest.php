@@ -42,8 +42,6 @@ final class AddProductToProductBundleWhenEditNormalProductEventListenerTest exte
         $event->expects($this->once())->method('getSubject')->willReturn($product);
         $product->expects($this->once())->method('getProductBundle')->willReturn(null);
         $this->listener->addProductToProductBundle($event);
-
-        $this->assertTrue(true, 'No exception means pass');
     }
 
     public function testSetsProductOnBundleWhenBundleExistsAndNoProduct(): void

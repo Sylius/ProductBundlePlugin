@@ -31,7 +31,7 @@ final class HasProductBundleTest extends ConstraintValidatorTestCase
 
     private const PRODUCT_CODE = 'MY_PRODUCT';
 
-    private MockObject&OrderRepositoryInterface $productRepository;
+    private MockObject|OrderRepositoryInterface $productRepository;
 
     protected function setUp(): void
     {

@@ -24,7 +24,7 @@ class ProductBundle implements ProductBundleInterface
 
     protected mixed $id = null;
 
-    protected ?ProductInterface $product;
+    protected ?ProductInterface $product = null;
 
     /** @var ProductBundleItemInterface[]|Collection */
     protected Collection $productBundleItems;
