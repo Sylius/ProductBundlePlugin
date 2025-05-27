@@ -13,17 +13,20 @@ declare(strict_types=1);
 
 namespace BitBag\SyliusProductBundlePlugin\EventListener;
 
+use BitBag\SyliusProductBundlePlugin\Entity\ProductInterface;
 use Sylius\Bundle\ResourceBundle\Event\ResourceControllerEvent;
-use Tests\BitBag\SyliusProductBundlePlugin\Entity\Product;
 
 final class AddProductToProductBundleWhenEditNormalProductEventListener
 {
     public function addProductToProductBundle(ResourceControllerEvent $resourceControllerEvent): void
     {
-        /** @var Product $product */
+        /** @var ProductInterface $product */
         $product = $resourceControllerEvent->getSubject();
-        if (null !== $product->getProductBundle() && null === $product->getProductBundle()->getProduct()) {
-            $product->getProductBundle()->setProduct($product);
+
+        $bundle = $product->getProductBundle();
+
+        if (null !== $bundle && null === $bundle->getProduct()) {
+            $bundle->setProduct($product);
         }
     }
 }

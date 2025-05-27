@@ -24,13 +24,12 @@ use Webmozart\Assert\Assert;
 final class HasProductBundleValidator extends ConstraintValidator
 {
     public function __construct(
-        private ProductRepositoryInterface $productRepository,
+        private readonly ProductRepositoryInterface $productRepository,
     ) {
     }
 
     /**
      * @param ProductCodeAwareInterface|mixed $value
-     * @param HasProductBundle|Constraint $constraint
      */
     public function validate($value, Constraint $constraint): void
     {
@@ -47,6 +46,10 @@ final class HasProductBundleValidator extends ConstraintValidator
             $this->context->addViolation(HasProductBundle::PRODUCT_DOESNT_EXIST_MESSAGE);
 
             return;
+        }
+
+        if (null === $product->getProductBundle()) {
+            $this->context->addViolation(HasProductBundle::NOT_A_BUNDLE_MESSAGE);
         }
     }
 }
