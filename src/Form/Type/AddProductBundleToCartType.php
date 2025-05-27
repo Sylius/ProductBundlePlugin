@@ -53,6 +53,6 @@ final class AddProductBundleToCartType extends AbstractType
 
     public function getBlockPrefix(): string
     {
-        return 'bitbag_sylius_product_bundle_plugin_add_product_bundle_to_cart';
+        return 'sylius_product_bundle_plugin_add_product_bundle_to_cart';
     }
 }

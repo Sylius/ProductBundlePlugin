@@ -6,4 +6,4 @@ imports:
 framework:
   messenger:
     buses:
-      bitbag_sylius_product_bundle.command_bus: ~
+      sylius_product_bundle.command_bus: ~

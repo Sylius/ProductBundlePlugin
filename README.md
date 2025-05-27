@@ -104,7 +104,7 @@ The **SyliusProductBundle** plugin allows you to create bundles from existing pr
     # config/routes.yaml
     ...
     
-    bitbag_sylius_product_bundle_plugin:
+    sylius_product_bundle_plugin:
         resource: "@SyliusProductBundlePlugin/config/routes.yml"
     ```
 
@@ -278,7 +278,7 @@ The **SyliusProductBundle** plugin allows you to create bundles from existing pr
                                         label: sylius.ui.configurable_product
                                         route: sylius_admin_product_create
                                     bundle:
-                                        label: bitbag_sylius_product_bundle.ui.bundle
+                                        label: sylius_product_bundle.ui.bundle
                                         route: bitbag_product_bundle_admin_product_create_bundle
        
     ```

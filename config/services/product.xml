@@ -18,7 +18,7 @@
             <argument type="service" id="sylius.repository.product" />
             <argument type="service" id="sylius.repository.product_variant" />
 
-            <argument type="service" id="bitbag_sylius_product_bundle.factory.add_product_bundle_to_cart_dto"/>
+            <argument type="service" id="sylius_product_bundle.factory.add_product_bundle_to_cart_dto"/>
 
             <call method="setLiveResponder">
                 <argument type="service" id="ux.live_component.live_responder"/>

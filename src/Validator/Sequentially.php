@@ -44,6 +44,6 @@ final class Sequentially extends Composite
 
     public function validatedBy(): string
     {
-        return 'bitbag_sylius_product_bundle_validator_sequentially';
+        return 'sylius_product_bundle_validator_sequentially';
     }
 }

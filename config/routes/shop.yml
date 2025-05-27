@@ -1,8 +1,8 @@
-bitbag_sylius_product_bundle_shop_ajax_cart_add_product_bundle:
+sylius_product_bundle_shop_ajax_cart_add_product_bundle:
     path: /ajax/cart/product-bundle/add
     methods: [POST]
     defaults:
-        _controller: bitbag_sylius_product_bundle.controller.order_item::addProductBundleAction
+        _controller: sylius_product_bundle.controller.order_item::addProductBundleAction
         _format: json
         _sylius:
             factory:
@@ -17,11 +17,11 @@ bitbag_sylius_product_bundle_shop_ajax_cart_add_product_bundle:
                 parameters: {}
             flash: sylius.cart.add_item
 
-bitbag_sylius_product_bundle_shop_partial_cart_add_product_bundle:
+sylius_product_bundle_shop_partial_cart_add_product_bundle:
     path: /_partial/cart/product-bundle/add
     methods: [GET]
     defaults:
-        _controller: bitbag_sylius_product_bundle.controller.order_item::addProductBundleAction
+        _controller: sylius_product_bundle.controller.order_item::addProductBundleAction
         _sylius:
             template: $template
             factory:

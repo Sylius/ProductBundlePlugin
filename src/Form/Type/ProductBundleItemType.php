@@ -35,6 +35,6 @@ final class ProductBundleItemType extends AbstractResourceType
 
     public function getBlockPrefix(): string
     {
-        return 'bitbag_sylius_product_bundle_plugin_product_bundle_item';
+        return 'sylius_product_bundle_plugin_product_bundle_item';
     }
 }

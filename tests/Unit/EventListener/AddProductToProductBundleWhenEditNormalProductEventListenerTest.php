@@ -13,11 +13,11 @@ declare(strict_types=1);
 
 namespace Tests\Sylius\ProductBundlePlugin\Unit\EventListener;
 
-use Sylius\ProductBundlePlugin\Entity\ProductBundleInterface;
-use Sylius\ProductBundlePlugin\EventListener\AddProductToProductBundleWhenEditNormalProductEventListener;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Sylius\Bundle\ResourceBundle\Event\ResourceControllerEvent;
+use Sylius\ProductBundlePlugin\Entity\ProductBundleInterface;
+use Sylius\ProductBundlePlugin\EventListener\AddProductToProductBundleWhenEditNormalProductEventListener;
 use Tests\Sylius\ProductBundlePlugin\Entity\Product;
 
 final class AddProductToProductBundleWhenEditNormalProductEventListenerTest extends TestCase

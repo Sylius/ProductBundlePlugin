@@ -17,13 +17,13 @@ use Symfony\Component\Validator\Constraint;
 
 final class HasProductBundle extends Constraint
 {
-    public const PRODUCT_DOESNT_EXIST_MESSAGE = 'bitbag_sylius_product_bundle.add_to_cart.product_doesnt_exist';
+    public const PRODUCT_DOESNT_EXIST_MESSAGE = 'sylius_product_bundle.add_to_cart.product_doesnt_exist';
 
-    public const NOT_A_BUNDLE_MESSAGE = 'bitbag_sylius_product_bundle.product.not_a_bundle';
+    public const NOT_A_BUNDLE_MESSAGE = 'sylius_product_bundle.product.not_a_bundle';
 
     public function validatedBy(): string
     {
-        return 'bitbag_sylius_product_bundle_validator_has_product_bundle';
+        return 'sylius_product_bundle_validator_has_product_bundle';
     }
 
     public function getTargets(): array|string

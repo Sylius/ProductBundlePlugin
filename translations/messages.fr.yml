@@ -1,4 +1,4 @@
-bitbag_sylius_product_bundle:
+sylius_product_bundle:
   ui:
     bundle: Lot
     product_variant: Variante produit

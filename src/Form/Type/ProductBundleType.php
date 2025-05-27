@@ -25,7 +25,7 @@ final class ProductBundleType extends AbstractResourceType
     {
         $builder
             ->add('isPackedProduct', CheckboxType::class, [
-                'label' => 'bitbag_sylius_product_bundle.ui.is_packed_product',
+                'label' => 'sylius_product_bundle.ui.is_packed_product',
             ])
             ->add('productBundleItems', LiveCollectionType::class, [
                 'entry_type' => ProductBundleItemType::class,
@@ -41,6 +41,6 @@ final class ProductBundleType extends AbstractResourceType
 
     public function getBlockPrefix(): string
     {
-        return 'bitbag_sylius_product_bundle_plugin_product_bundle';
+        return 'sylius_product_bundle_plugin_product_bundle';
     }
 }

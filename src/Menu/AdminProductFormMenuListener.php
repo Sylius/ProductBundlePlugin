@@ -24,7 +24,7 @@ final class AdminProductFormMenuListener
         $menu
             ->addChild('bundle')
             ->setAttribute('template', '@SyliusProductBundlePlugin/Admin/product/form/side_navigation/bundle.html.twig')
-            ->setLabel('bitbag_sylius_product_bundle.ui.bundle')
+            ->setLabel('sylius_product_bundle.ui.bundle')
         ;
     }
 }

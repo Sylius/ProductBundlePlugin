@@ -14,22 +14,22 @@
     <class name="Sylius\ProductBundlePlugin\Entity\ProductBundleItem">
         <property name="productVariant">
             <constraint name="NotBlank">
-                <option name="message">bitbag_sylius_product_bundle.product_bundle_item.product_variant.not_blank</option>
+                <option name="message">sylius_product_bundle.product_bundle_item.product_variant.not_blank</option>
                 <option name="groups">
-                    <value>bitbag_sylius_product_bundle</value>
+                    <value>sylius_product_bundle</value>
                 </option>
             </constraint>
         </property>
         <property name="quantity">
             <constraint name="NotBlank">
-                <option name="message">bitbag_sylius_product_bundle.product_bundle_item.quantity.not_blank</option>
+                <option name="message">sylius_product_bundle.product_bundle_item.quantity.not_blank</option>
                 <option name="groups">
-                    <value>bitbag_sylius_product_bundle</value>
+                    <value>sylius_product_bundle</value>
                 </option>
             </constraint>
             <constraint name="Positive">
                 <option name="groups">
-                    <value>bitbag_sylius_product_bundle</value>
+                    <value>sylius_product_bundle</value>
                 </option>
             </constraint>
         </property>
