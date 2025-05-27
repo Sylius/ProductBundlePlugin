@@ -15,13 +15,15 @@ namespace Sylius\ProductBundlePlugin\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\ORM\Mapping as ORM;
 
 trait ProductBundleOrderItemsAwareTrait
 {
     /** @var ProductBundleOrderItemInterface[]|Collection */
+    #[ORM\OneToMany(mappedBy: 'orderItem', targetEntity: ProductBundleOrderItem::class, cascade: ['all'])]
     protected Collection $productBundleOrderItems;
 
-    protected function init(): void
+    protected function initializeProductBundleOrderItems(): void
     {
         $this->productBundleOrderItems = new ArrayCollection();
     }

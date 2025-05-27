@@ -2,15 +2,15 @@ sylius_twig_hooks:
   hooks:
     'sylius_admin.product.update.content.form.side_navigation':
       bundle:
-        template: '@SyliusProductBundlePlugin/Admin/product/form/side_navigation/bundle.html.twig'
+        template: '@SyliusProductBundlePlugin/admin/product/form/side_navigation/bundle.html.twig'
         priority: -10
 
     'sylius_admin.product.update.content.form.sections':
       bundle:
-        template: '@SyliusProductBundlePlugin/Admin/product/form/sections/bundle.html.twig'
+        template: '@SyliusProductBundlePlugin/admin/product/form/sections/bundle.html.twig'
         priority: -10
 
     'sylius_admin.product.update.content.form.sections.bundle':
       product_bundle:
-        template: '@SyliusProductBundlePlugin/Admin/product/form/sections/bundle/productBundleItem.html.twig'
+        template: '@SyliusProductBundlePlugin/admin/product/form/sections/bundle/product_bundle_item.html.twig'
         priority: 0

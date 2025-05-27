@@ -1,0 +1,29 @@
+imports:
+    - { resource: "@SyliusProductBundlePlugin/config/config.yaml" }
+    - { resource: "services_test.php" }
+
+doctrine:
+    orm:
+        entity_managers:
+            default:
+                mappings:
+                    TestKit:
+                        is_bundle: false
+                        type: attribute
+                        dir: '%kernel.project_dir%/../../../tests/TestApplication/src/Entity'
+                        prefix: Tests\Sylius\ProductBundlePlugin
+
+sylius_product:
+    resources:
+        product:
+            classes:
+                model: Tests\Sylius\ProductBundlePlugin\Entity\Product
+        product_variant:
+            classes:
+                repository: Sylius\ProductBundlePlugin\Repository\ProductVariantRepository
+
+sylius_order:
+    resources:
+        order_item:
+            classes:
+                model: Tests\Sylius\ProductBundlePlugin\Entity\OrderItem

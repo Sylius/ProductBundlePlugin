@@ -1,9 +1,0 @@
-imports:
-  - { resource: resources.yml }
-  - { resource: services.xml }
-  - { resource: "@SyliusProductBundlePlugin/config/twig_hooks/twig_hooks.yaml" }
-
-framework:
-  messenger:
-    buses:
-      sylius_product_bundle.command_bus: ~
