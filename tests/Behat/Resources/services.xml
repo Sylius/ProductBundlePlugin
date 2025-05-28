@@ -27,7 +27,7 @@
             public="false"
             parent="sylius.behat.page.admin.crud.create"
         >
-            <argument>bitbag_product_bundle_admin_product_create_bundle</argument>
+            <argument>sylius_product_bundle_admin_product_create_bundle</argument>
         </service>
 
         <service
