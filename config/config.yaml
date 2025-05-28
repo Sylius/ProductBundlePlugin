@@ -7,3 +7,28 @@ framework:
     messenger:
         buses:
             sylius_product_bundle.command_bus: ~
+
+sylius_grid:
+    grids:
+        sylius_admin_product:
+            actions:
+                main:
+                    create:
+                        type: links
+                        label: sylius.ui.create
+                        options:
+                            class: primary
+                            icon: "tabler:plus"
+                            header:
+                                icon: cube
+                                label: sylius.ui.type
+                            links:
+                                simple:
+                                    label: sylius.ui.simple_product
+                                    route: sylius_admin_product_create_simple
+                                configurable:
+                                    label: sylius.ui.configurable_product
+                                    route: sylius_admin_product_create
+                                bundle:
+                                    label: sylius_product_bundle.ui.bundle
+                                    route: sylius_product_bundle_admin_product_create_bundle
