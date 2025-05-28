@@ -11,55 +11,34 @@
 
 declare(strict_types=1);
 
-namespace Sylius\ProductBundlePlugin\Component\Product;
+namespace Sylius\ProductBundlePlugin\Twig\Component\Product;
 
 use Doctrine\Persistence\ObjectManager;
-use Sylius\Bundle\CoreBundle\Provider\FlashBagProvider;
 use Sylius\Bundle\OrderBundle\Factory\AddToCartCommandFactory;
 use Sylius\Bundle\ShopBundle\Twig\Component\Product\AddToCartFormComponent as BaseAddToCartFormComponent;
-use Sylius\Bundle\ShopBundle\Twig\Component\Product\Trait\ProductLivePropTrait;
-use Sylius\Bundle\ShopBundle\Twig\Component\Product\Trait\ProductVariantLivePropTrait;
-use Sylius\Bundle\UiBundle\Twig\Component\TemplatePropTrait;
 use Sylius\Component\Core\Factory\CartItemFactoryInterface;
 use Sylius\Component\Core\Model\OrderItem;
 use Sylius\Component\Core\Model\ProductVariantInterface;
 use Sylius\Component\Core\Repository\ProductRepositoryInterface;
 use Sylius\Component\Core\Repository\ProductVariantRepositoryInterface;
 use Sylius\Component\Order\Context\CartContextInterface;
-use Sylius\Component\Order\SyliusCartEvents;
 use Sylius\ProductBundlePlugin\Entity\OrderItemInterface;
 use Sylius\ProductBundlePlugin\Entity\ProductInterface;
 use Sylius\ProductBundlePlugin\Factory\AddProductBundleToCartDtoFactoryInterface;
-use Sylius\TwigHooks\LiveComponent\HookableLiveComponentTrait;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use Symfony\Component\EventDispatcher\GenericEvent;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\Form\FormInterface;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Routing\RouterInterface;
-use Symfony\UX\LiveComponent\Attribute\AsLiveComponent;
-use Symfony\UX\LiveComponent\Attribute\LiveAction;
-use Symfony\UX\LiveComponent\Attribute\LiveArg;
-use Symfony\UX\LiveComponent\ComponentToolsTrait;
 use Symfony\UX\LiveComponent\ComponentWithFormTrait;
-use Symfony\UX\LiveComponent\DefaultActionTrait;
 
-#[AsLiveComponent]
 final class AddToCartFormComponent extends BaseAddToCartFormComponent
 {
-    use ComponentToolsTrait;
     use ComponentWithFormTrait;
-    use DefaultActionTrait;
-    use HookableLiveComponentTrait;
-    use ProductLivePropTrait;
-    use ProductVariantLivePropTrait;
-    use TemplatePropTrait;
 
     /**
      * @param CartItemFactoryInterface<OrderItem> $cartItemFactory
      * @param class-string $formClass
-     * @param ProductRepositoryInterface<ProductInterface> $productRepository
      * @param ProductVariantRepositoryInterface<ProductVariantInterface> $productVariantRepository
      */
     public function __construct(
@@ -91,36 +70,6 @@ final class AddToCartFormComponent extends BaseAddToCartFormComponent
             $formClass,
             $productRepository,
             $productVariantRepository,
-        );
-    }
-
-    #[LiveAction]
-    public function addToCart(
-        #[LiveArg]
-        ?string $routeName = null,
-        #[LiveArg]
-        array $routeParameters = [],
-        #[LiveArg]
-        ?string $idRouteParameter = null,
-        #[LiveArg]
-        bool $addFlashMessage = true,
-    ): RedirectResponse {
-        $this->submitForm();
-        $addToCartCommand = $this->getForm()->getData();
-
-        $this->eventDispatcher->dispatch(new GenericEvent($addToCartCommand), SyliusCartEvents::CART_ITEM_ADD);
-        $this->manager->persist($addToCartCommand->getCart());
-        $this->manager->flush();
-
-        FlashBagProvider
-            ::getFlashBag($this->requestStack)
-            ->add('success', 'sylius.cart.add_item');
-
-        return new RedirectResponse(
-            $this->router->generate(
-                $this->routeName,
-                $this->routeParameters,
-            ),
         );
     }
 
