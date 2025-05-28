@@ -17,10 +17,8 @@ sylius_grid:
                         type: links
                         label: sylius.ui.create
                         options:
-                            class: primary
                             icon: "tabler:plus"
                             header:
-                                icon: cube
                                 label: sylius.ui.type
                             links:
                                 simple:
