@@ -279,7 +279,7 @@ The **SyliusProductBundle** plugin allows you to create bundles from existing pr
                                         route: sylius_admin_product_create
                                     bundle:
                                         label: sylius_product_bundle.ui.bundle
-                                        route: bitbag_product_bundle_admin_product_create_bundle
+                                        route: sylius_product_bundle_admin_product_create_bundle
        
     ```
 11. If you have full configuration in xml override doctrine config :

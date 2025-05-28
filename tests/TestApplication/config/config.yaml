@@ -18,9 +18,6 @@ sylius_product:
         product:
             classes:
                 model: Tests\Sylius\ProductBundlePlugin\Entity\Product
-        product_variant:
-            classes:
-                repository: Sylius\ProductBundlePlugin\Repository\ProductVariantRepository
 
 sylius_order:
     resources:
