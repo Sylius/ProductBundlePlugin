@@ -131,4 +131,3 @@ We work on stable, supported and up-to-date versions of packages. We recommend y
    ```bash
      bin/console cache:clear
    ```
-
