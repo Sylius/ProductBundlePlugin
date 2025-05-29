@@ -41,7 +41,36 @@ Symfony Flex, it's much quicker!
     ```
 
    > Remember to allow community recipes with `composer config extra.symfony.allow-contrib true` or during plugin installation process
-   
+
+1. Update your rector config
+
+    ```php
+   <?php
+
+    declare(strict_types=1);
+    
+    use Rector\Config\RectorConfig;
+    use Sylius\SyliusRector\Set\SyliusProductBundle;
+    
+    return static function (RectorConfig $rectorConfig): void {
+        $rectorConfig->importNames();
+        $rectorConfig->removeUnusedImports();
+        $rectorConfig->import(__DIR__ . '/vendor/sylius/sylius-rector/config/config.php');
+        $rectorConfig->paths([
+            __DIR__ . '/src'
+        ]);
+    
+        $rectorConfig->sets([
+            SyliusProductBundle::PRODUCT_BUNDLE,
+        ]);
+    };
+    ```
+   And then run:
+
+    ```bash
+   vendor/bin/rector process src
+    ```
+
 1. Run `yarn encore dev` or `yarn encore production`
 
 1. Database update:
