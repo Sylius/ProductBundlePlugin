@@ -12,6 +12,7 @@ sylius_product_bundle:
     product:
         not_a_bundle: "Product has to be a bundle."
     product_bundle_item:
+        min_count: At least one product must be added to the bundle.
         product_variant:
             not_blank: Product variant cannot be blank.
         quantity:

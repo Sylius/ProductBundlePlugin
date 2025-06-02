@@ -17,6 +17,9 @@ use Sylius\Bundle\AdminBundle\Form\Type\AddButtonType;
 use Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
+use Symfony\Component\Validator\Constraints\Count;
 use Symfony\UX\LiveComponent\Form\Type\LiveCollectionType;
 
 final class ProductBundleType extends AbstractResourceType
@@ -26,6 +29,7 @@ final class ProductBundleType extends AbstractResourceType
         $builder
             ->add('isPackedProduct', CheckboxType::class, [
                 'label' => 'sylius_product_bundle.ui.is_packed_product',
+                'required' => false,
             ])
             ->add('productBundleItems', LiveCollectionType::class, [
                 'entry_type' => ProductBundleItemType::class,
