@@ -20,7 +20,7 @@
         <property name="productBundleItems">
             <constraint name="Valid"/>
             <constraint name="Count">
-                <option name="min">1</option>
+                <option name="min">2</option>
                 <option name="minMessage">sylius_product_bundle.product_bundle_item.min_count</option>
                 <option name="groups">sylius_product_bundle</option>
             </constraint>

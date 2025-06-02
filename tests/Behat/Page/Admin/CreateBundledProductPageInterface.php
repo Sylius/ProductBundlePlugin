@@ -29,4 +29,6 @@ interface CreateBundledProductPageInterface extends CreatePageInterface
     public function specifyOriginalPrice(ChannelInterface $channel, int $originalPrice): void;
 
     public function addProductsToBundle(array $productsNames): void;
+
+    public function getProductBundleValidationErrors(): void;
 }

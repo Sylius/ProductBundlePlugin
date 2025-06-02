@@ -17,15 +17,15 @@
             </thead>
             <tbody>
             {% for product_bundle_form in product_bundle_items %}
-                <tr>
-                    <td>
+                <tr {{ sylius_test_html_attribute('bundle-item', loop.index0) }}>
+                    <td {{ sylius_test_html_attribute('bundle-item-product-variant') }}>
                         {{ form_row(product_bundle_form.children.productVariant) }}
                     </td>
-                    <td>
+                    <td {{ sylius_test_html_attribute('bundle-item-quantity') }}>
                         {{ form_row(product_bundle_form.children.quantity) }}
                     </td>
                     <td>
-                        {{ form_widget(product_bundle_form.vars.button_delete, { label: 'sylius.ui.delete'|trans, attr: { class: 'btn btn-outline-danger w-100','data-test-image-delete': '' }}) }}
+                        {{ form_widget(product_bundle_form.vars.button_delete, { label: 'sylius.ui.delete'|trans, attr: { class: 'btn btn-outline-danger w-100' }}) }}
                     </td>
                 </tr>
             {% endfor %}
