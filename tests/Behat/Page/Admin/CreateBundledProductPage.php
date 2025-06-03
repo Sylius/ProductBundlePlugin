@@ -13,16 +13,28 @@ declare(strict_types=1);
 
 namespace Tests\Sylius\ProductBundlePlugin\Behat\Page\Admin;
 
-use Behat\Mink\Element\NodeElement;
+use Behat\Mink\Session;
 use Sylius\Behat\Context\Ui\Admin\Helper\NavigationTrait;
 use Sylius\Behat\Page\Admin\Crud\CreatePage;
 use Sylius\Behat\Service\DriverHelper;
+use Sylius\Behat\Service\Helper\AutocompleteHelperInterface;
 use Sylius\Component\Core\Model\ChannelInterface;
+use Symfony\Component\Routing\RouterInterface;
 use Webmozart\Assert\Assert;
 
 class CreateBundledProductPage extends CreatePage implements CreateBundledProductPageInterface
 {
     use NavigationTrait;
+
+    public function __construct(
+        Session $session,
+        $minkParameters,
+        RouterInterface $router,
+        string $routeName,
+        protected readonly AutocompleteHelperInterface $autocompleteHelper,
+    ) {
+        parent::__construct($session, $minkParameters, $router, $routeName);
+    }
 
     public function specifyCode(string $code): void
     {
@@ -32,27 +44,12 @@ class CreateBundledProductPage extends CreatePage implements CreateBundledProduc
     public function nameItIn(string $name, string $localeCode): void
     {
         $this->clickTabIfItsNotActive('translations');
-        $this->activateLanguageTab($localeCode);
         $this->getElement('name', ['%locale%' => $localeCode])->setValue($name);
     }
 
     public function specifySlugIn(?string $slug, string $locale): void
     {
-        $this->activateLanguageTab($locale);
-
         $this->getElement('slug', ['%locale%' => $locale])->setValue($slug);
-    }
-
-    public function activateLanguageTab(string $locale): void
-    {
-        if (DriverHelper::isNotJavascript($this->getDriver())) {
-            return;
-        }
-
-        $languageTabTitle = $this->getElement('language_tab', ['%locale%' => $locale]);
-        if (!$languageTabTitle->hasClass('active')) {
-            $languageTabTitle->click();
-        }
     }
 
     public function specifyPrice(ChannelInterface $channel, string $price): void
@@ -69,46 +66,53 @@ class CreateBundledProductPage extends CreatePage implements CreateBundledProduc
 
     public function addProductsToBundle(array $productsNames): void
     {
+        if (DriverHelper::isNotJavascript($this->getDriver())) {
+            return;
+        }
+
         $this->clickTabIfItsNotActive('bundle');
 
-        $productCounter = 0;
-
-        foreach ($productsNames as $productName) {
-            if (DriverHelper::isNotJavascript($this->getDriver())) {
-                return;
-            }
-
+        foreach ($productsNames as $productCounter => $productName) {
             $addSelector = $this->getElement('add_product_to_bundle_button');
             $addSelector->click();
-            $addSelector->waitFor(5, fn () => $this->hasElement('product_selector_dropdown'));
+            $addSelector->waitFor(5, fn () => $this->hasElement('bundle_item', ['%item%' => $productCounter]));
+            $bundleItem = $this->getElement('bundle_item', ['%item%' => $productCounter]);
 
-            $dropdown = $this->getLastProductAutocomplete();
-            $dropdown->click();
-            $dropdown->waitFor(5, fn () => $this->hasElement('product_selector_dropdown_item'));
+            $this->autocompleteHelper->selectByName(
+                $this->getDriver(),
+                $bundleItem->find('css', 'select')->getXpath(),
+                $productName,
+            );
 
-            $item = $this->getElement('product_selector_dropdown_item', [
-                '%item%' => $productName,
-            ]);
-            $item->click();
-
-            $this->getElement('product_selector_quantity', ['%productCounter%' => $productCounter])->setValue('1');
-
-            ++$productCounter;
+            $bundleItem->find('css', 'input[type="number"]')->setValue('1');
         }
+    }
+
+    public function getProductBundleValidationErrors(): void
+    {
+        Assert::same(
+            $this->getElement('product_bundle_validation_error')->getText(),
+            'At least two products must be added to the bundle.',
+        );
+    }
+
+    public function getResourceName(): string
+    {
+        return 'product';
     }
 
     protected function getDefinedElements(): array
     {
         return array_merge(parent::getDefinedElements(), [
             'add_product_to_bundle_button' => '#sylius_admin_product_productBundle_productBundleItems_add',
+            'bundle_item' => '[data-test-bundle-item="%item%"]',
+            'bundle_item_product_variant' => '[data-test-bundle-item-product-variant]',
+            'bundle_item_quantity' => '[data-test-bundle-item-quantity]',
             'code' => '#sylius_product_code',
-            'language_tab' => '[data-locale="%locale%"] .title',
             'name' => '#sylius_admin_product_translations_%locale%_name',
             'original_price' => '#sylius_admin_product_variant_channelPricings_%channelCode%_originalPrice',
             'price' => '#sylius_admin_product_variant_channelPricings_%channelCode%_price',
-            'product_selector_quantity' => '#sylius_product_productBundle_productBundleItems_%productCounter%_quantity',
-            'product_selector_dropdown_item' => '#add_product_to_bundle_autocomplete > div > div > div.menu.transition.visible > div.item:contains("%item%")',
-            'product_selector_dropdown' => '#add_product_to_bundle_autocomplete',
+            'product_bundle_validation_error' => '#sylius_admin_product .alert-danger',
             'side_navigation_tab' => '[data-test-side-navigation-tab="%name%"]',
             'slug' => '#sylius_admin_product_translations_%locale%_slug',
         ]);
@@ -120,23 +124,9 @@ class CreateBundledProductPage extends CreatePage implements CreateBundledProduc
             return;
         }
 
-        $attributesTab = $this->getElement('side-navigation-tab', ['%name%' => $tabName]);
+        $attributesTab = $this->getElement('side_navigation_tab', ['%name%' => $tabName]);
         if (!$attributesTab->hasClass('active')) {
             $attributesTab->click();
         }
-    }
-
-    private function getLastProductAutocomplete(): NodeElement
-    {
-        $items = $this->getDocument()->findAll('css', '#add_product_to_bundle_autocomplete');
-
-        Assert::notEmpty($items);
-
-        return end($items);
-    }
-
-    public function getResourceName(): string
-    {
-        return 'product';
     }
 }

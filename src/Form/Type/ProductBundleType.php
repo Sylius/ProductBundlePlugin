@@ -26,6 +26,7 @@ final class ProductBundleType extends AbstractResourceType
         $builder
             ->add('isPackedProduct', CheckboxType::class, [
                 'label' => 'sylius_product_bundle.ui.is_packed_product',
+                'required' => false,
             ])
             ->add('productBundleItems', LiveCollectionType::class, [
                 'entry_type' => ProductBundleItemType::class,

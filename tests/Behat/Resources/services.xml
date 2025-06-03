@@ -28,6 +28,7 @@
             parent="sylius.behat.page.admin.crud.create"
         >
             <argument>sylius_product_bundle_admin_product_create_bundle</argument>
+            <argument type="service" id="Sylius\Behat\Service\Helper\AutocompleteHelperInterface" />
         </service>
 
         <service

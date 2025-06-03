@@ -17,7 +17,7 @@ use Behat\Behat\Context\Context;
 use Sylius\Component\Core\Model\ChannelInterface;
 use Tests\Sylius\ProductBundlePlugin\Behat\Page\Admin\CreateBundledProductPageInterface;
 
-class ProductBundleContext implements Context
+readonly class ProductBundleContext implements Context
 {
     public function __construct(
         private CreateBundledProductPageInterface $createBundledProductPage,
@@ -54,7 +54,7 @@ class ProductBundleContext implements Context
      * @When I set its slug to :slug
      * @When I set its slug to :slug in :language
      */
-    public function iSetItsSlugToIn(?string $slug = null, $language = 'en_US')
+    public function iSetItsSlugToIn(?string $slug = null, $language = 'en_US'): void
     {
         $this->createBundledProductPage->specifySlugIn($slug, $language);
     }
@@ -62,7 +62,7 @@ class ProductBundleContext implements Context
     /**
      * @When /^I set its(?:| default) price to "(?:€|£|\$)([^"]+)" for ("([^"]+)" channel)$/
      */
-    public function iSetItsPriceTo(string $price, ChannelInterface $channel)
+    public function iSetItsPriceTo(string $price, ChannelInterface $channel): void
     {
         $this->createBundledProductPage->specifyPrice($channel, $price);
     }
@@ -70,7 +70,7 @@ class ProductBundleContext implements Context
     /**
      * @When /^I set its original price to "(?:€|£|\$)([^"]+)" for ("([^"]+)" channel)$/
      */
-    public function iSetItsOriginalPriceTo(int $originalPrice, ChannelInterface $channel)
+    public function iSetItsOriginalPriceTo(int $originalPrice, ChannelInterface $channel): void
     {
         $this->createBundledProductPage->specifyOriginalPrice($channel, $originalPrice);
     }
@@ -88,8 +88,16 @@ class ProductBundleContext implements Context
      * @When I add product :firstProductName and :secondProductName to the bundle
      * @When I add product :firstProductName and :secondProductName and :thirdProductName to the bundle
      */
-    public function iAddProductsToBundledProduct(...$productsNames)
+    public function iAddProductsToBundledProduct(string ...$productsNames): void
     {
         $this->createBundledProductPage->addProductsToBundle($productsNames);
+    }
+
+    /**
+     * @Then I should be notified that bundle must contain at least two products
+     */
+    public function iShouldBeNotifiedThatBundleMustContainAtLeaseTwoProducts(): void
+    {
+        $this->createBundledProductPage->getProductBundleValidationErrors();
     }
 }
