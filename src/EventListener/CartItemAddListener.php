@@ -13,10 +13,10 @@ declare(strict_types=1);
 
 namespace Sylius\ProductBundlePlugin\EventListener;
 
+use Sylius\Bundle\OrderBundle\Controller\AddToCartCommandInterface;
 use Sylius\Component\Order\Modifier\OrderModifierInterface;
 use Sylius\ProductBundlePlugin\Dto\AddProductBundleToCartDtoInterface;
 use Symfony\Component\EventDispatcher\GenericEvent;
-use Webmozart\Assert\Assert;
 
 final readonly class CartItemAddListener
 {
@@ -29,7 +29,12 @@ final readonly class CartItemAddListener
     {
         $addToCartCommand = $event->getSubject();
 
-        Assert::isInstanceOf($addToCartCommand, AddProductBundleToCartDtoInterface::class);
+        if (
+            false === $addToCartCommand instanceof AddProductBundleToCartDtoInterface &&
+            false === $addToCartCommand instanceof AddToCartCommandInterface
+        ) {
+            return;
+        }
 
         $this->orderModifier->addToOrder($addToCartCommand->getCart(), $addToCartCommand->getCartItem());
     }

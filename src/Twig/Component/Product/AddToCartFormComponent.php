@@ -25,6 +25,7 @@ use Sylius\Component\Order\Context\CartContextInterface;
 use Sylius\ProductBundlePlugin\Entity\OrderItemInterface;
 use Sylius\ProductBundlePlugin\Entity\ProductInterface;
 use Sylius\ProductBundlePlugin\Factory\AddProductBundleToCartDtoFactoryInterface;
+use Sylius\ProductBundlePlugin\Form\Type\AddProductBundleToCartType;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\Form\FormInterface;
@@ -54,6 +55,7 @@ final class AddToCartFormComponent extends BaseAddToCartFormComponent
         ProductRepositoryInterface $productRepository,
         ProductVariantRepositoryInterface $productVariantRepository,
         protected readonly AddProductBundleToCartDtoFactoryInterface $addProductBundleToCartDtoFactory,
+        protected readonly ?string $bundleFormClass = null,
     ) {
         $this->initializeProduct($productRepository);
         $this->initializeProductVariant($productVariantRepository);
@@ -77,6 +79,9 @@ final class AddToCartFormComponent extends BaseAddToCartFormComponent
     {
         /** @var ProductInterface $product */
         $product = $this->product;
+        if (!$product->isBundle()) {
+            return parent::instantiateForm();
+        }
 
         /** @var OrderItemInterface $orderItem */
         $orderItem = $this->cartItemFactory->createForProduct($product);
@@ -89,6 +94,10 @@ final class AddToCartFormComponent extends BaseAddToCartFormComponent
             $orderProduct,
         );
 
-        return $this->formFactory->create($this->formClass, $addToCartCommand, ['product' => $product]);
+        return $this->formFactory->create(
+            $this->bundleFormClass ?? AddProductBundleToCartType::class,
+            $addToCartCommand,
+            ['product' => $product],
+        );
     }
 }

@@ -2,6 +2,9 @@ imports:
     - { resource: "@SyliusProductBundlePlugin/config/config.yaml" }
     - { resource: "services_test.php" }
 
+framework:
+    annotations: false
+
 doctrine:
     orm:
         entity_managers:
