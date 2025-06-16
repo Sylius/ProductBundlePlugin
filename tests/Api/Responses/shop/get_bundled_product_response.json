@@ -8,7 +8,9 @@
   "images": [],
   "id": "@integer@",
   "code": "WHISKEY_DOUBLE_PACK",
-  "variants": ["/api/v2/shop/product-variants/@string@"],
+  "variants": [
+    "/api/v2/shop/product-variants/@string@"
+  ],
   "options": [],
   "associations": [],
   "createdAt": "@datetime@",
@@ -20,5 +22,15 @@
   "description": "@string@",
   "slug": "@string@",
   "bundle": "/api/v2/admin/product-bundles/@integer@",
-  "defaultVariant": "@string@"
+  "defaultVariant": "@string@",
+  "defaultVariantData": {
+    "@context": "/api/v2/contexts/ProductVariant",
+    "@id": "/api/v2/shop/product-variants/WHISKEY_DOUBLE_PACK",
+    "@type": "ProductVariant",
+    "name": "Whiskey Double Pack",
+    "inStock": true,
+    "price": 1800,
+    "originalPrice": 1800,
+    "lowestPriceBeforeDiscount": null
+  }
 }
