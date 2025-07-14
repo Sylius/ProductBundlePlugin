@@ -6,6 +6,25 @@
         xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd"
 >
     <services>
+        <service
+                id="sylius_admin.twig.component.product.form"
+                class="Sylius\ProductBundlePlugin\Twig\Component\Product\FormComponent"
+        >
+            <argument type="service" id="sylius.repository.product" />
+            <argument type="service" id="form.factory" />
+            <argument>%sylius.model.product.class%</argument>
+            <argument>Sylius\Bundle\AdminBundle\Form\Type\ProductType</argument>
+            <argument type="service" id="sylius.generator.slug" />
+            <argument type="service" id="sylius.repository.product_attribute" />
+            <argument type="service" id="sylius.factory.product" />
+
+            <call method="setLiveResponder">
+                <argument type="service" id="ux.live_component.live_responder"/>
+            </call>
+
+            <tag name="sylius.live_component.admin" key="sylius_admin:product:form" />
+        </service>
+
         <service id="sylius_product_bundle.twig.extension.smash_promotion" class="Sylius\ProductBundlePlugin\Twig\Extension\ProductBundleOrderItemExtension" public="false">
             <argument type="service" id="twig" />
             <tag name="twig.extension" />

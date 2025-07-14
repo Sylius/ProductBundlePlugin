@@ -1,5 +1,10 @@
 sylius_twig_hooks:
   hooks:
+    'sylius_admin.product.create.content':
+      form:
+        props:
+          isBundle: '@=_context.resource.isBundle()'
+
     'sylius_admin.product.create.content.form.side_navigation':
       bundle:
         template: '@SyliusProductBundlePlugin/admin/product/form/side_navigation/bundle.html.twig'

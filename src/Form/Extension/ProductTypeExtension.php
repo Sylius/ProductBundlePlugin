@@ -14,21 +14,29 @@ declare(strict_types=1);
 namespace Sylius\ProductBundlePlugin\Form\Extension;
 
 use Sylius\Bundle\AdminBundle\Form\Type\ProductType;
+use Sylius\ProductBundlePlugin\Entity\ProductInterface;
 use Sylius\ProductBundlePlugin\Form\Type\ProductBundleType;
 use Symfony\Component\Form\AbstractTypeExtension;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormEvents;
 use Symfony\Component\Validator\Constraints\Valid;
 
 final class ProductTypeExtension extends AbstractTypeExtension
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
-        $builder
-            ->add('productBundle', ProductBundleType::class, [
-                'label' => false,
-                'constraints' => [new Valid()],
-            ])
-        ;
+        $builder->addEventListener(FormEvents::PRE_SET_DATA, function ($event) {
+            /** @var ProductInterface $data */
+            $data = $event->getData();
+            $form = $event->getForm();
+
+            if (true === $data->isBundle()) {
+                $form->add('productBundle', ProductBundleType::class, [
+                    'label' => false,
+                    'constraints' => [new Valid()],
+                ]);
+            }
+        });
     }
 
     public static function getExtendedTypes(): iterable
