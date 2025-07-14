@@ -13,34 +13,22 @@ declare(strict_types=1);
 
 namespace Sylius\ProductBundlePlugin\Twig\Component\Product;
 
+use Sylius\Bundle\AdminBundle\Twig\Component\Product\FormComponent as BaseFormComponent;
 use Sylius\Bundle\UiBundle\Twig\Component\LiveCollectionTrait;
 use Sylius\Bundle\UiBundle\Twig\Component\ResourceFormComponentTrait;
 use Sylius\Bundle\UiBundle\Twig\Component\TemplatePropTrait;
 use Sylius\Component\Core\Model\ProductInterface;
-use Sylius\Component\Product\Generator\SlugGeneratorInterface;
-use Sylius\Component\Product\Model\ProductAttributeInterface;
-use Sylius\Component\Product\Model\ProductAttributeValueInterface;
-use Sylius\ProductBundlePlugin\Factory\ProductFactoryInterface;
-use Sylius\Resource\Doctrine\Persistence\RepositoryInterface;
-use Sylius\Resource\Model\ResourceInterface;
-use Symfony\Component\Form\FormFactoryInterface;
+use Sylius\Component\Resource\Model\ResourceInterface;
+use Sylius\ProductBundlePlugin\Factory\ProductFactoryInterface as PluginProductFactoryInterface;
 use Symfony\Component\Form\FormInterface;
-use Symfony\Component\Form\FormView;
 use Symfony\UX\LiveComponent\Attribute\AsLiveComponent;
-use Symfony\UX\LiveComponent\Attribute\LiveAction;
-use Symfony\UX\LiveComponent\Attribute\LiveArg;
 use Symfony\UX\LiveComponent\Attribute\LiveProp;
 use Symfony\UX\LiveComponent\ComponentToolsTrait;
-use Symfony\UX\TwigComponent\Attribute\ExposeInTemplate;
 use Webmozart\Assert\Assert;
 
-#[AsLiveComponent]
-class FormComponent
+#[AsLiveComponent]  // dziedziczy alias i tagi z rodzica
+class FormComponent extends BaseFormComponent
 {
-    public const ATTRIBUTE_REMOVED_EVENT = 'sylius_admin:product:form:attributed_deleted';
-
-    public const AUTOCOMPLETE_CLEAR_REQUESTED_EVENT = 'sylius_admin.product_attribute_autocomplete.clear_requested';
-
     use ComponentToolsTrait;
     use LiveCollectionTrait;
     use TemplatePropTrait;
@@ -48,150 +36,23 @@ class FormComponent
     /** @use ResourceFormComponentTrait<ProductInterface> */
     use ResourceFormComponentTrait;
 
-    /** @var array<string> */
-    #[LiveProp(writable: true, hydrateWith: 'hydrateAttributesToBeAdded', dehydrateWith: 'dehydrateAttributesToBeAdded')]
-    #[ExposeInTemplate(name: 'attributes_to_be_added')]
-    public array $attributesToBeAdded = [];
-
-    #[LiveProp(writable: false)]
-    public bool $isSimple = false;
-
     #[LiveProp(writable: false)]
     public bool $isBundle = false;
-
-    /**
-     * @param RepositoryInterface<ProductInterface> $productRepository
-     * @param RepositoryInterface<ProductAttributeInterface> $productAttributeRepository
-     * @param ProductFactoryInterface<ProductInterface> $productFactory
-     */
-    public function __construct(
-        RepositoryInterface $productRepository,
-        FormFactoryInterface $formFactory,
-        string $resourceClass,
-        string $formClass,
-        protected readonly SlugGeneratorInterface $slugGenerator,
-        protected readonly RepositoryInterface $productAttributeRepository,
-        protected readonly ProductFactoryInterface $productFactory,
-    ) {
-        $this->initialize($productRepository, $formFactory, $resourceClass, $formClass);
-    }
-
-    /**
-     * @return array<string, array<string, FormView>>
-     */
-    #[ExposeInTemplate(name: 'mapped_product_attributes')]
-    public function getMappedProductAttributes(): array
-    {
-        $mappedAttributes = [];
-
-        $attributes = $this->getFormView()->children['attributes'];
-
-        foreach ($attributes->children as $attribute) {
-            /** @var ProductAttributeValueInterface $productAttributeValue */
-            $productAttributeValue = $attribute->vars['value'];
-
-            $mappedAttributes[$productAttributeValue->getAttribute()->getCode()][$productAttributeValue->getLocaleCode()] = $attribute;
-        }
-
-        return $mappedAttributes;
-    }
-
-    #[LiveAction]
-    public function applyToAll(#[LiveArg] string $attributeCode, #[LiveArg] string $localeCode): void
-    {
-        $matchingAttributes = array_filter(
-            $this->formValues['attributes'],
-            fn (array $value) => $value['attribute'] === $attributeCode && $value['localeCode'] === $localeCode,
-        );
-        $currentValue = array_pop($matchingAttributes)['value'];
-
-        $this->formValues['attributes'] = array_map(
-            fn (array $value) => $value['attribute'] === $attributeCode
-                ? ['attribute' => $attributeCode, 'localeCode' => $value['localeCode'], 'value' => $currentValue]
-                : $value,
-            $this->formValues['attributes'],
-        );
-    }
-
-    #[LiveAction]
-    public function removeAttribute(#[LiveArg] string $attributeCode): void
-    {
-        $this->formValues['attributes'] = array_filter(
-            $this->formValues['attributes'],
-            fn (array $value) => $value['attribute'] !== $attributeCode,
-        );
-        $this->dispatchBrowserEvent(self::ATTRIBUTE_REMOVED_EVENT, ['attributeCode' => $attributeCode]);
-    }
-
-    #[LiveAction]
-    public function addAttributes(): void
-    {
-        foreach ($this->attributesToBeAdded as $attributeCode) {
-            $productAttribute = $this->productAttributeRepository->findOneBy(['code' => $attributeCode]);
-
-            if (!$productAttribute->isTranslatable()) {
-                $this->formValues['attributes'][] = [
-                    'attribute' => $attributeCode,
-                    'localeCode' => null,
-                    'value' => '',
-                ];
-
-                continue;
-            }
-
-            foreach ($this->formValues['translations'] as $localesCode => $translation) {
-                $this->formValues['attributes'][] = [
-                    'attribute' => $attributeCode,
-                    'localeCode' => $localesCode,
-                    'value' => '',
-                ];
-            }
-        }
-
-        $this->dispatchBrowserEvent(self::AUTOCOMPLETE_CLEAR_REQUESTED_EVENT);
-    }
-
-    #[LiveAction]
-    public function generateProductSlug(#[LiveArg] string $localeCode): void
-    {
-        $this->formValues['translations'][$localeCode]['slug'] = $this->slugGenerator->generate($this->formValues['translations'][$localeCode]['name']);
-    }
-
-    /**
-     * @return array<string>
-     */
-    public function hydrateAttributesToBeAdded(string $value): array
-    {
-        if ('' === $value) {
-            return [];
-        }
-
-        return explode(',', $value);
-    }
-
-    /**
-     * @param array<string> $value
-     */
-    public function dehydrateAttributesToBeAdded(array $value): string
-    {
-        return implode(',', $value);
-    }
 
     protected function instantiateForm(): FormInterface
     {
         return $this->formFactory->create($this->formClass, $this->resource);
     }
 
-    /** @return ProductInterface */
     protected function createResource(): ResourceInterface
     {
-        if (true === $this->isBundle) {
-            Assert::isInstanceOf($this->productFactory, ProductFactoryInterface::class);
+        if ($this->isBundle) {
+            Assert::isInstanceOf($this->productFactory, PluginProductFactoryInterface::class);
 
             return $this->productFactory->createWithVariantAndBundle();
         }
 
-        return $this->isSimple ? $this->productFactory->createWithVariant() : $this->productFactory->createNew();
+        return parent::createResource();
     }
 
     protected function getDataModelValue(): string
