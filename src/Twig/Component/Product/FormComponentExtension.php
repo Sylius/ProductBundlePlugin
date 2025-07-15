@@ -13,21 +13,21 @@ declare(strict_types=1);
 
 namespace Sylius\ProductBundlePlugin\Twig\Component\Product;
 
-use Sylius\Bundle\AdminBundle\Twig\Component\Product\FormComponent as BaseFormComponent;
+use Sylius\Bundle\AdminBundle\Twig\Component\Product\FormComponent;
 use Sylius\Bundle\UiBundle\Twig\Component\LiveCollectionTrait;
 use Sylius\Bundle\UiBundle\Twig\Component\ResourceFormComponentTrait;
 use Sylius\Bundle\UiBundle\Twig\Component\TemplatePropTrait;
 use Sylius\Component\Core\Model\ProductInterface;
 use Sylius\Component\Resource\Model\ResourceInterface;
-use Sylius\ProductBundlePlugin\Factory\ProductFactoryInterface as PluginProductFactoryInterface;
+use Sylius\ProductBundlePlugin\Factory\ProductFactoryInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\UX\LiveComponent\Attribute\AsLiveComponent;
 use Symfony\UX\LiveComponent\Attribute\LiveProp;
 use Symfony\UX\LiveComponent\ComponentToolsTrait;
 use Webmozart\Assert\Assert;
 
-#[AsLiveComponent]  // dziedziczy alias i tagi z rodzica
-class FormComponent extends BaseFormComponent
+#[AsLiveComponent]
+final class FormComponentExtension extends FormComponent
 {
     use ComponentToolsTrait;
     use LiveCollectionTrait;
@@ -47,12 +47,16 @@ class FormComponent extends BaseFormComponent
     protected function createResource(): ResourceInterface
     {
         if ($this->isBundle) {
-            Assert::isInstanceOf($this->productFactory, PluginProductFactoryInterface::class);
+            Assert::isInstanceOf($this->productFactory, ProductFactoryInterface::class);
 
-            return $this->productFactory->createWithVariantAndBundle();
+            $resource = $this->productFactory->createWithVariantAndBundle();
+        } else {
+            $resource = parent::createResource();
         }
 
-        return parent::createResource();
+        Assert::isInstanceOf($resource, ResourceInterface::class);
+
+        return $resource;
     }
 
     protected function getDataModelValue(): string

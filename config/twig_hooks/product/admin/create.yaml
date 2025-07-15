@@ -1,21 +1,21 @@
 sylius_twig_hooks:
-  hooks:
-    'sylius_admin.product.create.content':
-      form:
-        props:
-          isBundle: '@=_context.resource.isBundle()'
+    hooks:
+        'sylius_admin.product.create.content':
+            form:
+                props:
+                    isBundle: '@=_context.resource.isBundle()'
 
-    'sylius_admin.product.create.content.form.side_navigation':
-      bundle:
-        template: '@SyliusProductBundlePlugin/admin/product/form/side_navigation/bundle.html.twig'
-        priority: -10
+        'sylius_admin.product.create.content.form.side_navigation':
+            bundle:
+                template: '@SyliusProductBundlePlugin/admin/product/form/side_navigation/bundle.html.twig'
+                priority: -10
 
-    'sylius_admin.product.create.content.form.sections':
-      bundle:
-        template: '@SyliusProductBundlePlugin/admin/product/form/sections/bundle.html.twig'
-        priority: -10
+        'sylius_admin.product.create.content.form.sections':
+            bundle:
+                template: '@SyliusProductBundlePlugin/admin/product/form/sections/bundle.html.twig'
+                priority: -10
 
-    'sylius_admin.product.create.content.form.sections.bundle':
-      bundle:
-        template: '@SyliusProductBundlePlugin/admin/product/form/sections/bundle/product_bundle_item.html.twig'
-        priority: 0
+        'sylius_admin.product.create.content.form.sections.bundle':
+            bundle:
+                template: '@SyliusProductBundlePlugin/admin/product/form/sections/bundle/product_bundle_item.html.twig'
+                priority: 0
