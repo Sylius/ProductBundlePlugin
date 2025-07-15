@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Sylius\ProductBundlePlugin\Twig\Component\Product;
 
-use Sylius\Bundle\AdminBundle\Twig\Component\Product\FormComponent;
+use Sylius\Bundle\AdminBundle\Twig\Component\Product\FormComponent as BaseFormComponent;
 use Sylius\Bundle\UiBundle\Twig\Component\LiveCollectionTrait;
 use Sylius\Bundle\UiBundle\Twig\Component\ResourceFormComponentTrait;
 use Sylius\Bundle\UiBundle\Twig\Component\TemplatePropTrait;
@@ -27,7 +27,7 @@ use Symfony\UX\LiveComponent\ComponentToolsTrait;
 use Webmozart\Assert\Assert;
 
 #[AsLiveComponent]
-final class FormComponentExtension extends FormComponent
+class FormComponent extends BaseFormComponent
 {
     use ComponentToolsTrait;
     use LiveCollectionTrait;
