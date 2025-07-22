@@ -1,6 +1,19 @@
 sylius_product_bundle:
-  product_bundle_item:
-    product_variant:
-      not_blank: La variante produit ne peut pas être vide.
-    quantity:
-      not_blank: La quantité ne peut pas être vide.
+    add_to_cart:
+        no_order_id_or_token: "Aucun identifiant de commande ou jeton de commande n'a été fourni."
+        cart_doesnt_exist: "Le panier n'existe pas."
+        product_bundle_doesnt_exist: "L'ensemble de produits avec l'identifiant {{ id }} n'existe pas."
+        product_disabled: "Le produit avec le code {{ code }} n'est pas activé."
+        product_variant_disabled: "La variante de produit avec le code {{ code }} n'est pas activée."
+        product_variant_insufficient_stock: "La variante de produit avec le code {{ code }} n'a pas de stock suffisant."
+        product_doesnt_exist: "Le produit n'existe pas."
+        product_variant_doesnt_exist: "Le produit {{ code }} n'a pas de variante."
+        product_doesnt_exist_in_channel: "Le canal {{ channel }} n'a pas de produit avec le code {{ code }}."
+    product:
+        not_a_bundle: "Le produit doit être un bundle."
+    product_bundle_item:
+        min_count: "Le bundle doit contenir au moins deux produits."
+        product_variant:
+            not_blank: La variante produit ne peut pas être vide.
+        quantity:
+            not_blank: La quantité ne peut pas être vide.

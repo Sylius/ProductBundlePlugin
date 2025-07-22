@@ -1,5 +1,18 @@
 sylius_product_bundle:
+    add_to_cart:
+        no_order_id_or_token: "Geen bestel-ID of bestel-token opgegeven."
+        cart_doesnt_exist: "Winkelwagen bestaat niet."
+        product_bundle_doesnt_exist: "Productbundel met ID {{ id }} bestaat niet."
+        product_disabled: "Product met code {{ code }} is niet ingeschakeld."
+        product_variant_disabled: "Productvariant met code {{ code }} is niet ingeschakeld."
+        product_variant_insufficient_stock: "Productvariant met code {{ code }} heeft onvoldoende voorraad."
+        product_doesnt_exist: "Product bestaat niet."
+        product_variant_doesnt_exist: "Product {{ code }} heeft geen variant."
+        product_doesnt_exist_in_channel: "Kanaal {{ channel }} heeft geen product met code {{ code }}."
+    product:
+        not_a_bundle: "Product moet een bundel zijn."
     product_bundle_item:
+        min_count: "De bundel moet minstens twee producten bevatten."
         product_variant:
             not_blank: Productvariant mag niet leeg zijn.
         quantity:

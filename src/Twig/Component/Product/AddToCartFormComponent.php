@@ -33,7 +33,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\UX\LiveComponent\ComponentWithFormTrait;
 
-final class AddToCartFormComponent extends BaseAddToCartFormComponent
+class AddToCartFormComponent extends BaseAddToCartFormComponent
 {
     use ComponentWithFormTrait;
 
