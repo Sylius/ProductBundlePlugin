@@ -131,6 +131,7 @@ jobs:
                 run: |
                     (vendor/bin/console doctrine:database:create -vvv)
                     (vendor/bin/console doctrine:migrations:migrate -vvv)
+                    (vendor/bin/console messenger:setup-transports -vvv)
 
             -
                 name: Prepare test application assets
