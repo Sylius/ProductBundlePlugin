@@ -62,7 +62,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "^7.2"
+            "require": "^7.4"
         },
         "public-dir": "vendor/sylius/test-application/public"
     }
