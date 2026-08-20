@@ -13,7 +13,6 @@ declare(strict_types=1);
 
 namespace Tests\Sylius\ProductBundlePlugin\Api\Shop;
 
-use Sylius\Bundle\CoreBundle\SyliusCoreBundle;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Tests\Sylius\ProductBundlePlugin\Api\JsonApiTestCase;
@@ -41,11 +40,7 @@ final class ProductTest extends JsonApiTestCase
         );
         $response = $this->client->getResponse();
 
-        if (SyliusCoreBundle::VERSION_ID < 20100) {
-            $filename = 'shop/sylius_20/get_bundled_product_response';
-        }
-
-        $this->assertResponse($response, $filename ?? 'shop/get_bundled_product_response', Response::HTTP_OK);
+        $this->assertResponse($response, 'shop/get_bundled_product_response', Response::HTTP_OK);
     }
 
     /** @test */

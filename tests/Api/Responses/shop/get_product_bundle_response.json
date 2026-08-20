@@ -1,21 +1,47 @@
 {
-  "@context": "\/api\/v2\/contexts\/ProductBundle",
-  "@id": "@string@",
-  "@type": "Product",
-  "product": "\/api\/v2\/shop\/products\/WHISKEY_DOUBLE_PACK",
-  "items": [
-    {
-      "@type": "ProductBundleItem",
-      "@id": "@string@",
-      "productVariant": "@...@",
-      "quantity": 1
-    },
-    {
-      "@type": "ProductBundleItem",
-      "@id": "@string@",
-      "productVariant": "@...@",
-      "quantity": 1
-    }
-  ],
-  "isPacked": true
+    "@context": "/api/v2/contexts/Product",
+    "@id": "/api/v2/shop/products/WHISKEY_DOUBLE_PACK/bundle",
+    "@type": "ProductBundle",
+    "product": "/api/v2/shop/products/WHISKEY_DOUBLE_PACK",
+    "items": [
+        {
+            "@id": "@string@",
+            "@type": "ProductBundleItem",
+            "productVariant": {
+                "@id": "/api/v2/shop/product-variants/JOHNNY_WALKER_BLACK",
+                "@type": "ProductVariant",
+                "code": "JOHNNY_WALKER_BLACK",
+                "product": "/api/v2/shop/products/JOHNNY_WALKER_BLACK",
+                "optionValues": [],
+                "translations": {
+                    "en_US": {
+                        "@id": "/api/v2/admin/product-variants/JOHNNY_WALKER_BLACK/translations/en_US",
+                        "@type": "ProductVariantTranslation",
+                        "name": "Johnny Walker Black"
+                    }
+                }
+            },
+            "quantity": 1
+        },
+        {
+            "@id": "@string@",
+            "@type": "ProductBundleItem",
+            "productVariant": {
+                "@id": "/api/v2/shop/product-variants/JACK_DANIELS_GENTLEMAN",
+                "@type": "ProductVariant",
+                "code": "JACK_DANIELS_GENTLEMAN",
+                "product": "/api/v2/shop/products/JACK_DANIELS_GENTLEMAN",
+                "optionValues": [],
+                "translations": {
+                    "en_US": {
+                        "@id": "/api/v2/admin/product-variants/JACK_DANIELS_GENTLEMAN/translations/en_US",
+                        "@type": "ProductVariantTranslation",
+                        "name": "Jack Daniel's Gentleman Jack"
+                    }
+                }
+            },
+            "quantity": 1
+        }
+    ],
+    "isPacked": true
 }
