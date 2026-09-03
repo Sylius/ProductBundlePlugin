@@ -75,6 +75,10 @@ final class ProductTest extends JsonApiTestCase
         );
         $response = $this->client->getResponse();
 
-        $this->assertResponse($response, 'shop/get_product_bundle_response', Response::HTTP_OK);
+        if (SyliusCoreBundle::VERSION_ID < 20100) {
+            $filename = 'shop/sylius_20/get_product_bundle_response';
+        }
+
+        $this->assertResponse($response, $filename ?? 'shop/get_product_bundle_response', Response::HTTP_OK);
     }
 }
