@@ -31,12 +31,9 @@ use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Routing\RouterInterface;
-use Symfony\UX\LiveComponent\ComponentWithFormTrait;
 
 class AddToCartFormComponent extends BaseAddToCartFormComponent
 {
-    use ComponentWithFormTrait;
-
     /**
      * @param CartItemFactoryInterface<OrderItem> $cartItemFactory
      * @param class-string $formClass
