@@ -13,7 +13,6 @@ declare(strict_types=1);
 
 namespace Tests\Sylius\ProductBundlePlugin\Api\Shop;
 
-use Sylius\Bundle\CoreBundle\SyliusCoreBundle;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\ProductBundlePlugin\Entity\OrderItemInterface;
 use Sylius\ProductBundlePlugin\Entity\ProductBundleInterface;
@@ -60,11 +59,7 @@ final class OrderTest extends JsonApiTestCase
 
         $response = $this->client->getResponse();
 
-        if (SyliusCoreBundle::VERSION_ID < 20100) {
-            $filename = 'shop/sylius_20/get_order_with_bundle_response';
-        }
-
-        $this->assertResponse($response, $filename ?? 'shop/get_order_with_bundle_response', Response::HTTP_OK);
+        $this->assertResponse($response, 'shop/get_order_with_bundle_response', Response::HTTP_OK);
     }
 
     /** @test */
