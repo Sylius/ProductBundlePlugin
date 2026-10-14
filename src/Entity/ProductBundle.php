@@ -26,7 +26,6 @@ class ProductBundle implements ProductBundleInterface
 
     protected ?ProductInterface $product = null;
 
-    /** @var ProductBundleItemInterface[]|Collection */
     protected Collection $productBundleItems;
 
     protected bool $isPackedProduct = false;
