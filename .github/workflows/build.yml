@@ -105,10 +105,6 @@ jobs:
                 run: composer require "sylius/sylius:${{ matrix.sylius }}" --no-update --no-scripts --no-interaction
 
             -
-                name: Configure Composer
-                run: composer config prefer-stable true
-
-            -
                 name: Build Sylius Test Application
                 uses: SyliusLabs/BuildTestAppAction@v3.2.0
                 with:

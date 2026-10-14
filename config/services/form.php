@@ -43,7 +43,7 @@ return static function (ContainerConfigurator $container): void {
 
     $services->set('sylius_product_bundle.form.extension.type.product', ProductTypeExtension::class)
         ->tag('form.type_extension', [
-            'extended-type' => ProductType::class,
+            'extended_type' => ProductType::class,
         ])
     ;
 };

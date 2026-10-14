@@ -22,16 +22,14 @@ use FriendsOfBehat\SymfonyExtension\ServiceContainer\SymfonyExtension;
 use FriendsOfBehat\VariadicExtension\ServiceContainer\VariadicExtension;
 use SyliusLabs\SuiteTagsExtension\ServiceContainer\SuiteTagsExtension;
 
-$imports = ['tests/Behat/Resources/suites.php'];
-
-// Import Sylius suites if available as PHP config (Behat 4.x requires PHP files, not YAML)
-$syliusSuitesPath = 'vendor/sylius/sylius/src/Sylius/Behat/Resources/config/suites.php';
-if (is_file(__DIR__ . '/' . $syliusSuitesPath)) {
-    array_unshift($imports, $syliusSuitesPath);
-}
+$syliusSuitesPath = 'vendor/sylius/sylius/src/Sylius/Behat/Resources/config/suites';
 
 return (new Config())
-    ->import($imports)
+    ->import([
+        // Sylius 2.3 ships its suites as a PHP config, earlier versions ship YAML.
+        is_file(__DIR__ . '/' . $syliusSuitesPath . '.php') ? $syliusSuitesPath . '.php' : $syliusSuitesPath . '.yml',
+        'tests/Behat/Resources/suites.php',
+    ])
     ->withProfile(
         (new Profile('default'))
             ->withExtension(new Extension(ChromeExtension::class))

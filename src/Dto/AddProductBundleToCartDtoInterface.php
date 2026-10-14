@@ -14,17 +14,14 @@ declare(strict_types=1);
 namespace Sylius\ProductBundlePlugin\Dto;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Sylius\Bundle\OrderBundle\Controller\AddToCartCommandInterface;
 use Sylius\Component\Order\Model\OrderInterface;
 use Sylius\Component\Order\Model\OrderItemInterface;
 use Sylius\ProductBundlePlugin\Entity\ProductInterface;
 
-interface AddProductBundleToCartDtoInterface
+interface AddProductBundleToCartDtoInterface extends AddToCartCommandInterface
 {
-    public function getCart(): OrderInterface;
-
     public function setCart(OrderInterface $cart): void;
-
-    public function getCartItem(): OrderItemInterface;
 
     public function setCartItem(OrderItemInterface $cartItem): void;
 
